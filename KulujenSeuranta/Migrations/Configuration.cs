@@ -7,6 +7,7 @@ namespace KulujenSeuranta.Migrations
     using KulujenSeuranta.Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using KulujenSeuranta.Settings;
 
     internal sealed class Configuration : DbMigrationsConfiguration<KulujenSeuranta.Models.ApplicationDbContext>
     {
@@ -30,12 +31,16 @@ namespace KulujenSeuranta.Migrations
             ir = rm.Create(new IdentityRole("canEdit"));
             var um = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
+            ConfigurationHandler configHandler = new ConfigurationHandler();
+            string username = configHandler.GetAppSettingValue("Username");
+            string password = configHandler.GetAppSettingValue("Password");
+
             var user = new ApplicationUser()
             {
-                UserName = "pekkaj.lukkari@gmail.com",
+                UserName = username
             };
 
-            ir = um.Create(user, "Vanessa2013");
+            ir = um.Create(user, password);
 
             if (ir.Succeeded == false)
             {

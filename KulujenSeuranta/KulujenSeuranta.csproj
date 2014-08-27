@@ -233,6 +233,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeTexts.sv.resx</DependentUpon>
     </Compile>
+    <Compile Include="Settings\ConfigurationHandler.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -322,7 +323,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
