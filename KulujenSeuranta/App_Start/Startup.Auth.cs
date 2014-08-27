@@ -60,8 +60,8 @@ namespace KulujenSeuranta
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = "198595447683-77h27lfibvvc6cf1ig4lpu15v8da5o9b.apps.googleusercontent.com",
+            //    ClientSecret = "E1CFxSSnZdXIk3i2g2B5SVxz"
             //});
         }
     }
