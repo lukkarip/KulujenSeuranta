@@ -31,6 +31,18 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
+
+                <ul class="nav navbar-nav">
+                    <li id="languageHeader">Language:</li>
+                    <li class="languageLinkSeparator">|</li>
+                    <li>@Html.ActionLink("English ", "ChangeCulture", "Account", new { lang = "en", returnUrl = this.Request.RawUrl }, new { @class = "languageLink" })</li>
+                    <li class="languageLinkSeparator">|</li>
+                    <li>@Html.ActionLink("Suomi", "ChangeCulture", "Account", new { lang = "fi", returnUrl = this.Request.RawUrl }, new { @class = "languageLink" })</li>
+                    <li class="languageLinkSeparator">|</li>
+                    <li style="padding-left: 0px;">@Html.ActionLink("Ruotsi", "ChangeCulture", "Account", new { lang = "sv", returnUrl = this.Request.RawUrl }, new { @class = "languageLink" })</li>
+                    <li class="languageLinkSeparator">|</li>
+                </ul>
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

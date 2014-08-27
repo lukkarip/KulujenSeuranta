@@ -22,3 +22,21 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+/* Kielilinkit master-sivulla. */
+#languageHeader {
+    color: #999;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 100px;
+}
+.languageLink {
+    padding-left: 5px !important;
+    padding-right: 2px !important;
+}
+.languageLinkSeparator {
+    color: #999;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

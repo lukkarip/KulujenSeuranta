@@ -1,26 +1,38 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = @ViewRes.HomeTexts.PageTitle;
 }
 
 <div class="jumbotron">
-    <h1>Kulujen Seuranta Application</h1>
-    <p class="lead">Kulujen Seuranta is application for managing your payments.</p>
+    <h1>@ViewRes.HomeTexts.AppName</h1>
+    <p class="lead">@ViewRes.HomeTexts.AppDefinition</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Payments</h2>
-        <p>Leipätekstiä ...</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Go &raquo;</a></p>
+        <h2>@ViewRes.HomeTexts.PaymentsHeading</h2>
+        <p>@ViewRes.HomeTexts.PaymentsDefinition</p>
+        <p>
+            <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">
+                @ViewRes.HomeTexts.PaymentsBtn &raquo;
+            </a>
+        </p>
     </div>
     <div class="col-md-4">
-        <h2>Statistics 1</h2>
-        <p>Leipätekstiä ...</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Go &raquo;</a></p>
+        <h2>@ViewRes.HomeTexts.StatisticsHeading</h2>
+        <p>@ViewRes.HomeTexts.StatisticsDefinition</p>
+        <p>
+            <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">
+                @ViewRes.HomeTexts.Statistics1Btn &raquo;
+            </a>
+        </p>
     </div>
     <div class="col-md-4">
-        <h2>Statistics 2</h2>
-        <p>Leipätekstiä ...</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Go &raquo;</a></p>
+        <h2>@ViewRes.HomeTexts.Statistics2Heading</h2>
+        <p>@ViewRes.HomeTexts.Statistics2Definition</p>
+        <p>
+            <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">
+                @ViewRes.HomeTexts.Statistics2Btn &raquo;
+            </a>
+        </p>
     </div>
 </div>

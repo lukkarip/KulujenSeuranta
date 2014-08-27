@@ -407,6 +407,13 @@ namespace KulujenSeuranta.Controllers
             return View();
         }
 
+        [AllowAnonymous]
+        public ActionResult ChangeCulture(string lang, string returnUrl)
+        {
+            Session["Culture"] = new CultureInfo(lang);
+            return Redirect(returnUrl);
+        }
+
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
