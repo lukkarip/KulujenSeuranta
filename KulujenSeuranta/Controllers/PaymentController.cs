@@ -55,7 +55,7 @@ namespace KulujenSeuranta.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "canEdit")]
-        public ActionResult Create([Bind(Include = "PaymentId,Sum,Date,User_Id")] Payment payment)
+        public ActionResult Create([Bind(Include = "PaymentId,Sum,Category,Date,User_Id")] Payment payment)
         {
             AddCurrentUserToPayment(payment);
             ModelState.Clear();
@@ -97,7 +97,7 @@ namespace KulujenSeuranta.Controllers
         [Authorize(Roles = "canEdit")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PaymentId,Sum,Date")] Payment payment)
+        public ActionResult Edit([Bind(Include = "PaymentId,Sum,Category,Date")] Payment payment)
         {
             AddCurrentUserToPayment(payment);
             ModelState.Clear();
