@@ -19,7 +19,7 @@ namespace KulujenSeuranta
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //Database.SetInitializer<KulujenSeuranta.Models.ApplicationDbContext>(null);
+           Database.SetInitializer<KulujenSeuranta.Models.ApplicationDbContext>(null);
         }
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace KulujenSeuranta
 
                 // Finally setting culture for each request
                 System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
-                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
+                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(new CultureInfo("fi").Name);
             }
         }
     }

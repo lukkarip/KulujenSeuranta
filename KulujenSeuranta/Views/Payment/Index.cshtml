@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<KulujenSeuranta.Models.Payment>
+@using KulujenSeuranta.Helpers;
 
 @{
     ViewBag.Title = "Index";
@@ -32,7 +33,7 @@
                 @Html.DisplayFor(modelItem => item.Sum)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Category)
+                @EnumCustomHelper.GetCategory(item.Category)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)

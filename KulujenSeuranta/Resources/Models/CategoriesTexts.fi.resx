@@ -117,10 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Target" xml:space="preserve">
-    <value>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</value>
+  <data name="Categories.Books" xml:space="preserve">
+    <value>Kirjat</value>
   </data>
-  <data name="DefaultSchema" xml:space="preserve">
-    <value>dbo</value>
+  <data name="Categories.Children" xml:space="preserve">
+    <value>Lapset</value>
+  </data>
+  <data name="Categories.Clothes" xml:space="preserve">
+    <value>Vaatteet</value>
+  </data>
+  <data name="Categories.ElectricityBill" xml:space="preserve">
+    <value>Sähkölasku</value>
+  </data>
+  <data name="Categories.Food" xml:space="preserve">
+    <value>Ruoka</value>
+  </data>
+  <data name="Categories.Gas" xml:space="preserve">
+    <value>Bensa</value>
+  </data>
+  <data name="Categories.Other" xml:space="preserve">
+    <value>Muut</value>
+  </data>
+  <data name="Categories.PhoneBill" xml:space="preserve">
+    <value>Puhelinlasku</value>
+  </data>
+  <data name="Categories.Presents" xml:space="preserve">
+    <value>Lahjat</value>
+  </data>
+  <data name="Categories.Rent" xml:space="preserve">
+    <value>Vuokra</value>
+  </data>
+  <data name="Categories.Restaurant" xml:space="preserve">
+    <value>Ravintolat</value>
+  </data>
+  <data name="Categories.TrainAndBusTickets" xml:space="preserve">
+    <value>Juna- &amp; bussiliput</value>
+  </data>
+  <data name="Categories.Travelling" xml:space="preserve">
+    <value>Matkustaminen</value>
   </data>
 </root>

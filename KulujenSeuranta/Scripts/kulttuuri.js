@@ -4,6 +4,7 @@
 $(document).ready(function () {
 
     Globalize.culture("fi-FI");
+    //alert(Globalize.culture().name);
 
     $('.datepicker').datepicker({
         format: "dd.mm.yyyy",

@@ -14,7 +14,6 @@ namespace KulujenSeuranta.Controllers
     public class PaymentController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        //private UserManager<ApplicationUser> UserManager = new UserManager<ApplicationUser>(new IUserStore<ApplicationUser>(this.db));
 
         // GET: Payment
         [Authorize(Roles = "canEdit")]

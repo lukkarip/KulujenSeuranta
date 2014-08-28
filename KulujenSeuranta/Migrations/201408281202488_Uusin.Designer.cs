@@ -7,13 +7,13 @@ namespace KulujenSeuranta.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class Initial5 : IMigrationMetadata
+    public sealed partial class Uusin : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial5));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Uusin));
         
         string IMigrationMetadata.Id
         {
-            get { return "201408251310049_Initial5"; }
+            get { return "201408281202488_Uusin"; }
         }
         
         string IMigrationMetadata.Source
