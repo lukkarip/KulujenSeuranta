@@ -1,37 +1,39 @@
-﻿@{
-    ViewBag.Title = @ViewRes.HomeTexts.PageTitle;
+﻿@using Resources.Views;
+
+@{
+    ViewBag.Title = @HomeTexts.txtPageTitle;
 }
 
 <div class="jumbotron">
-    <h1>@ViewRes.HomeTexts.AppName</h1>
-    <p class="lead">@ViewRes.HomeTexts.AppDefinition</p>
+    <h1>@HomeTexts.txtAppName</h1>
+    <p class="lead">@HomeTexts.txtAppDefinition</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>@ViewRes.HomeTexts.PaymentsHeading</h2>
-        <p>@ViewRes.HomeTexts.PaymentsDefinition</p>
+        <h2>@HomeTexts.txtPaymentsHeading</h2>
+        <p>@HomeTexts.txtPaymentsDefinition</p>
         <p>
             <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">
-                @ViewRes.HomeTexts.PaymentsBtn &raquo;
+                @HomeTexts.btnPayments &raquo;
             </a>
         </p>
     </div>
     <div class="col-md-4">
-        <h2>@ViewRes.HomeTexts.StatisticsHeading</h2>
-        <p>@ViewRes.HomeTexts.StatisticsDefinition</p>
+        <h2>@HomeTexts.txtStatisticsHeading</h2>
+        <p>@HomeTexts.txtStatisticsDefinition</p>
         <p>
             <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">
-                @ViewRes.HomeTexts.Statistics1Btn &raquo;
+                @HomeTexts.btnStatistics1 &raquo;
             </a>
         </p>
     </div>
     <div class="col-md-4">
-        <h2>@ViewRes.HomeTexts.Statistics2Heading</h2>
-        <p>@ViewRes.HomeTexts.Statistics2Definition</p>
+        <h2>@HomeTexts.txtStatistics2Heading</h2>
+        <p>@HomeTexts.txtStatistics2Definition</p>
         <p>
             <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">
-                @ViewRes.HomeTexts.Statistics2Btn &raquo;
+                @HomeTexts.btnStatistics2 &raquo;
             </a>
         </p>
     </div>

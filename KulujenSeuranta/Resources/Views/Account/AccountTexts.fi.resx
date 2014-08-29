@@ -117,40 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnPayments" xml:space="preserve">
-    <value>!R Maksuihin</value>
+  <data name="btnLogin" xml:space="preserve">
+    <value>Kirjaudu</value>
   </data>
-  <data name="btnStatistics1" xml:space="preserve">
-    <value>!R Tilastoihin</value>
+  <data name="btnRegister" xml:space="preserve">
+    <value>Rekisteröidy</value>
   </data>
-  <data name="btnStatistics2" xml:space="preserve">
-    <value>!R Tilastoihin</value>
+  <data name="chkRememberMe" xml:space="preserve">
+    <value>Muista minut?</value>
   </data>
-  <data name="txtAppDefinition" xml:space="preserve">
-    <value>!R Kulujen Seuranta on sovellus maksujen hallinnointiin.</value>
+  <data name="lnkRegisterNewUser" xml:space="preserve">
+    <value>Rekisteröidy palveluun</value>
   </data>
-  <data name="txtAppName" xml:space="preserve">
-    <value>!R Kulujen Seuranta sovellus</value>
+  <data name="txtConfirmPassword" xml:space="preserve">
+    <value>Vahvista salasana</value>
   </data>
-  <data name="txtPageTitle" xml:space="preserve">
-    <value>!R Etusivu</value>
+  <data name="txtCreateNewAccount" xml:space="preserve">
+    <value>Luo uusi käyttäjätunnus</value>
   </data>
-  <data name="txtPaymentsDefinition" xml:space="preserve">
-    <value>!R Maksut määritelmä ...</value>
+  <data name="txtEmail" xml:space="preserve">
+    <value>Sähköposti</value>
   </data>
-  <data name="txtPaymentsHeading" xml:space="preserve">
-    <value>!R Maksut</value>
+  <data name="txtPassword" xml:space="preserve">
+    <value>Salasana</value>
   </data>
-  <data name="txtStatistics2Definition" xml:space="preserve">
-    <value>!R Tilastot 2 määritelmä ...</value>
+  <data name="txtTitleLogin" xml:space="preserve">
+    <value>Kirjaudu sisään</value>
   </data>
-  <data name="txtStatistics2Heading" xml:space="preserve">
-    <value>!R Tilastot 2</value>
-  </data>
-  <data name="txtStatisticsDefinition" xml:space="preserve">
-    <value>!R Tilastot 1 määritelmä ...</value>
-  </data>
-  <data name="txtStatisticsHeading" xml:space="preserve">
-    <value>!R Tilastot 1</value>
+  <data name="txtTitleRegister" xml:space="preserve">
+    <value>Rekisteröidy palveluun</value>
   </data>
 </root>

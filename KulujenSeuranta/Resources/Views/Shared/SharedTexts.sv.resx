@@ -117,40 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnPayments" xml:space="preserve">
-    <value>!R Maksuihin</value>
+  <data name="lnkAbout" xml:space="preserve">
+    <value>Information från program</value>
   </data>
-  <data name="btnStatistics1" xml:space="preserve">
-    <value>!R Tilastoihin</value>
+  <data name="lnkContact" xml:space="preserve">
+    <value>Kontakt</value>
   </data>
-  <data name="btnStatistics2" xml:space="preserve">
-    <value>!R Tilastoihin</value>
+  <data name="lnkEnglish" xml:space="preserve">
+    <value>Engelska</value>
   </data>
-  <data name="txtAppDefinition" xml:space="preserve">
-    <value>!R Kulujen Seuranta on sovellus maksujen hallinnointiin.</value>
+  <data name="lnkFinnish" xml:space="preserve">
+    <value>Finska</value>
   </data>
-  <data name="txtAppName" xml:space="preserve">
-    <value>!R Kulujen Seuranta sovellus</value>
+  <data name="lnkHome" xml:space="preserve">
+    <value>Hemsida</value>
   </data>
-  <data name="txtPageTitle" xml:space="preserve">
-    <value>!R Etusivu</value>
+  <data name="lnkKulujenSeurantaApp" xml:space="preserve">
+    <value>Utgift Uppföljning App</value>
   </data>
-  <data name="txtPaymentsDefinition" xml:space="preserve">
-    <value>!R Maksut määritelmä ...</value>
+  <data name="lnkLogin" xml:space="preserve">
+    <value>Logga in</value>
   </data>
-  <data name="txtPaymentsHeading" xml:space="preserve">
-    <value>!R Maksut</value>
+  <data name="lnkLogoff" xml:space="preserve">
+    <value>Logga ut</value>
   </data>
-  <data name="txtStatistics2Definition" xml:space="preserve">
-    <value>!R Tilastot 2 määritelmä ...</value>
+  <data name="lnkPayments" xml:space="preserve">
+    <value>Utgift</value>
   </data>
-  <data name="txtStatistics2Heading" xml:space="preserve">
-    <value>!R Tilastot 2</value>
+  <data name="lnkRegister" xml:space="preserve">
+    <value>Registrera</value>
   </data>
-  <data name="txtStatisticsDefinition" xml:space="preserve">
-    <value>!R Tilastot 1 määritelmä ...</value>
+  <data name="lnkSwedish" xml:space="preserve">
+    <value>Svenska</value>
   </data>
-  <data name="txtStatisticsHeading" xml:space="preserve">
-    <value>!R Tilastot 1</value>
+  <data name="txtKulujenSeuranta" xml:space="preserve">
+    <value>Utgift Uppföljning</value>
+  </data>
+  <data name="txtLanguage" xml:space="preserve">
+    <value>Språk</value>
   </data>
 </root>

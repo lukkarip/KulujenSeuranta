@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Resources.Models {
+namespace Resources.Views {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Resources.Models {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class CategoriesTexts {
+    public class SharedTexts {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal CategoriesTexts() {
+        internal SharedTexts() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Resources.Models {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KulujenSeuranta.Resources.Models.CategoriesTexts", typeof(CategoriesTexts).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KulujenSeuranta.Resources.Views.Shared.SharedTexts", typeof(SharedTexts).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,119 +61,119 @@ namespace Resources.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Books.
+        ///   Looks up a localized string similar to About.
         /// </summary>
-        public static string Categories_Books {
+        public static string lnkAbout {
             get {
-                return ResourceManager.GetString("Categories.Books", resourceCulture);
+                return ResourceManager.GetString("lnkAbout", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Children.
+        ///   Looks up a localized string similar to Contact.
         /// </summary>
-        public static string Categories_Children {
+        public static string lnkContact {
             get {
-                return ResourceManager.GetString("Categories.Children", resourceCulture);
+                return ResourceManager.GetString("lnkContact", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clothes.
+        ///   Looks up a localized string similar to English.
         /// </summary>
-        public static string Categories_Clothes {
+        public static string lnkEnglish {
             get {
-                return ResourceManager.GetString("Categories.Clothes", resourceCulture);
+                return ResourceManager.GetString("lnkEnglish", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Electricity bill.
+        ///   Looks up a localized string similar to Finnish.
         /// </summary>
-        public static string Categories_ElectricityBill {
+        public static string lnkFinnish {
             get {
-                return ResourceManager.GetString("Categories.ElectricityBill", resourceCulture);
+                return ResourceManager.GetString("lnkFinnish", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Food.
+        ///   Looks up a localized string similar to Home.
         /// </summary>
-        public static string Categories_Food {
+        public static string lnkHome {
             get {
-                return ResourceManager.GetString("Categories.Food", resourceCulture);
+                return ResourceManager.GetString("lnkHome", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gas.
+        ///   Looks up a localized string similar to Expense Management App.
         /// </summary>
-        public static string Categories_Gas {
+        public static string lnkKulujenSeurantaApp {
             get {
-                return ResourceManager.GetString("Categories.Gas", resourceCulture);
+                return ResourceManager.GetString("lnkKulujenSeurantaApp", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Other.
+        ///   Looks up a localized string similar to Log in.
         /// </summary>
-        public static string Categories_Other {
+        public static string lnkLogin {
             get {
-                return ResourceManager.GetString("Categories.Other", resourceCulture);
+                return ResourceManager.GetString("lnkLogin", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone bill.
+        ///   Looks up a localized string similar to Log off.
         /// </summary>
-        public static string Categories_PhoneBill {
+        public static string lnkLogoff {
             get {
-                return ResourceManager.GetString("Categories.PhoneBill", resourceCulture);
+                return ResourceManager.GetString("lnkLogoff", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Presents.
+        ///   Looks up a localized string similar to Payments.
         /// </summary>
-        public static string Categories_Presents {
+        public static string lnkPayments {
             get {
-                return ResourceManager.GetString("Categories.Presents", resourceCulture);
+                return ResourceManager.GetString("lnkPayments", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rent.
+        ///   Looks up a localized string similar to Register.
         /// </summary>
-        public static string Categories_Rent {
+        public static string lnkRegister {
             get {
-                return ResourceManager.GetString("Categories.Rent", resourceCulture);
+                return ResourceManager.GetString("lnkRegister", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restaurant.
+        ///   Looks up a localized string similar to Swedish.
         /// </summary>
-        public static string Categories_Restaurant {
+        public static string lnkSwedish {
             get {
-                return ResourceManager.GetString("Categories.Restaurant", resourceCulture);
+                return ResourceManager.GetString("lnkSwedish", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Train &amp; bus tickets.
+        ///   Looks up a localized string similar to Expense Management.
         /// </summary>
-        public static string Categories_TrainAndBusTickets {
+        public static string txtKulujenSeuranta {
             get {
-                return ResourceManager.GetString("Categories.TrainAndBusTickets", resourceCulture);
+                return ResourceManager.GetString("txtKulujenSeuranta", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Travelling.
+        ///   Looks up a localized string similar to Language.
         /// </summary>
-        public static string Categories_Travelling {
+        public static string txtLanguage {
             get {
-                return ResourceManager.GetString("Categories.Travelling", resourceCulture);
+                return ResourceManager.GetString("txtLanguage", resourceCulture);
             }
         }
     }

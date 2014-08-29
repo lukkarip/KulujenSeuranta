@@ -1,32 +1,32 @@
 ﻿@model KulujenSeuranta.Models.Payment
 @using KulujenSeuranta.Helpers
+@using Resources.Views;
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = PaymentTexts.txtTitleDetails;
 }
 
-<h2>Details</h2>
+<h2>@PaymentTexts.txtTitleDetails</h2>
 
 <div>
-    <h4>Payment</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Sum)
+            @PaymentTexts.txtSum
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Sum)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Category)
+            @PaymentTexts.txtCategory
         </dt>
 
         <dd>
             @EnumCustomHelper.GetCategory(Model.Category)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Date)
+            @PaymentTexts.txtDate
         </dt>
 
         <dd>
@@ -36,6 +36,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PaymentId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(PaymentTexts.lnkEdit, "Edit", new { id = Model.PaymentId }) |
+    @Html.ActionLink(PaymentTexts.lnkBackToList, "Index")
 </p>

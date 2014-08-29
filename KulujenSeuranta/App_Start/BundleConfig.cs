@@ -29,6 +29,9 @@ namespace KulujenSeuranta
             bundles.Add(new ScriptBundle("~/bundles/kulttuuri").Include(
                        "~/Scripts/kulttuuri.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/bootstrapSelect").Include(
+                       "~/Scripts/bootstrap-select.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -43,7 +46,8 @@ namespace KulujenSeuranta
                       "~/Content/bootstrap.css",
                       "~/Content/datepicker.css",
                       "~/Content/datepicker3.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/bootstrap-select.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

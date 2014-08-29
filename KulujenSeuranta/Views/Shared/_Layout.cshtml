@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Resources.Views;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Kulujen Seuranta</title>
+    <title>@ViewBag.Title - @SharedTexts.txtKulujenSeuranta</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -22,25 +24,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Kulujen Seuranta App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink(@SharedTexts.lnkKulujenSeurantaApp, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Payments", "",  "Payment")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink(@SharedTexts.lnkHome, "Index", "Home")</li>
+                    <li>@Html.ActionLink(@SharedTexts.lnkPayments, "",  "Payment")</li>
+                    <li>@Html.ActionLink(@SharedTexts.lnkAbout, "About", "Home")</li>
+                    <li>@Html.ActionLink(@SharedTexts.lnkContact, "Contact", "Home")</li>
                 </ul>
 
-                <ul class="nav navbar-nav">
-                    <li id="languageHeader">Language:</li>
-                    <li class="languageLinkSeparator">|</li>
-                    <li>@Html.ActionLink("English ", "ChangeCulture", "Account", new { lang = "en", returnUrl = this.Request.RawUrl }, new { @class = "languageLink" })</li>
-                    <li class="languageLinkSeparator">|</li>
-                    <li>@Html.ActionLink("Suomi", "ChangeCulture", "Account", new { lang = "fi", returnUrl = this.Request.RawUrl }, new { @class = "languageLink" })</li>
-                    <li class="languageLinkSeparator">|</li>
-                    <li style="padding-left: 0px;">@Html.ActionLink("Ruotsi", "ChangeCulture", "Account", new { lang = "sv", returnUrl = this.Request.RawUrl }, new { @class = "languageLink" })</li>
-                    <li class="languageLinkSeparator">|</li>
+                <ul class="nav navbar-nav navbar-right" style="font-size: 12px;">
+                    <li id="languageHeader">@SharedTexts.txtLanguage: </li>
+                    <li>@Html.ActionLink(@SharedTexts.lnkEnglish, "ChangeCulture", "Account", new { lang = "en", returnUrl = this.Request.RawUrl }, new { @class = "languageLink" })</li>
+                    <li>@Html.ActionLink(@SharedTexts.lnkFinnish, "ChangeCulture", "Account", new { lang = "fi", returnUrl = this.Request.RawUrl }, new { @class = "languageLink" })</li>
+                    <li>@Html.ActionLink(@SharedTexts.lnkSwedish, "ChangeCulture", "Account", new { lang = "sv", returnUrl = this.Request.RawUrl }, new { @class = "languageLink" })</li>
                 </ul>
 
                 @Html.Partial("_LoginPartial")
@@ -51,7 +49,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Kulujen Seuranta</p>
+            <p>&copy; @DateTime.Now.Year - @SharedTexts.txtKulujenSeuranta</p>
         </footer>
     </div>
 

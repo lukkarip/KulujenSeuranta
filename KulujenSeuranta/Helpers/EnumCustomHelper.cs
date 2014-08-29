@@ -10,8 +10,11 @@ namespace KulujenSeuranta.Helpers
     {
         public static string GetCategory(KulujenSeuranta.Models.Categories category)
         {
-            return KulujenSeuranta.Infrastructure.EnumHelper
-                                  .GetLocalizedString<KulujenSeuranta.Models.Categories>(typeof(ModelRes.CategoriesTexts), category);
+            string sCategory = KulujenSeuranta.Infrastructure.EnumHelper
+                                  .GetLocalizedString<KulujenSeuranta
+                                  .Models.Categories>(typeof(Resources.Models.CategoriesTexts), category);
+
+            return sCategory;
         }
     }
 }

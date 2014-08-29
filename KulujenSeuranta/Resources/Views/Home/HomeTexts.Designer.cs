@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ViewRes {
+namespace Resources.Views {
     using System;
     
     
@@ -61,110 +61,110 @@ namespace ViewRes {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kulujen Seuranta is application for managing your payments..
+        ///   Looks up a localized string similar to Payments.
         /// </summary>
-        public static string AppDefinition {
+        public static string btnPayments {
             get {
-                return ResourceManager.GetString("AppDefinition", resourceCulture);
+                return ResourceManager.GetString("btnPayments", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kulujen Seuranta application.
+        ///   Looks up a localized string similar to Statistics.
         /// </summary>
-        public static string AppName {
+        public static string btnStatistics1 {
             get {
-                return ResourceManager.GetString("AppName", resourceCulture);
+                return ResourceManager.GetString("btnStatistics1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        public static string btnStatistics2 {
+            get {
+                return ResourceManager.GetString("btnStatistics2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expense Management is application for managing your payments..
+        /// </summary>
+        public static string txtAppDefinition {
+            get {
+                return ResourceManager.GetString("txtAppDefinition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expense Management application.
+        /// </summary>
+        public static string txtAppName {
+            get {
+                return ResourceManager.GetString("txtAppName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Home page.
         /// </summary>
-        public static string PageTitle {
+        public static string txtPageTitle {
             get {
-                return ResourceManager.GetString("PageTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Payments.
-        /// </summary>
-        public static string PaymentsBtn {
-            get {
-                return ResourceManager.GetString("PaymentsBtn", resourceCulture);
+                return ResourceManager.GetString("txtPageTitle", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Payments definition ....
         /// </summary>
-        public static string PaymentsDefinition {
+        public static string txtPaymentsDefinition {
             get {
-                return ResourceManager.GetString("PaymentsDefinition", resourceCulture);
+                return ResourceManager.GetString("txtPaymentsDefinition", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Payments.
         /// </summary>
-        public static string PaymentsHeading {
+        public static string txtPaymentsHeading {
             get {
-                return ResourceManager.GetString("PaymentsHeading", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Statistics.
-        /// </summary>
-        public static string Statistics1Btn {
-            get {
-                return ResourceManager.GetString("Statistics1Btn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Statistics.
-        /// </summary>
-        public static string Statistics2Btn {
-            get {
-                return ResourceManager.GetString("Statistics2Btn", resourceCulture);
+                return ResourceManager.GetString("txtPaymentsHeading", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Statistics 2 definition ....
         /// </summary>
-        public static string Statistics2Definition {
+        public static string txtStatistics2Definition {
             get {
-                return ResourceManager.GetString("Statistics2Definition", resourceCulture);
+                return ResourceManager.GetString("txtStatistics2Definition", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Statistics 2.
         /// </summary>
-        public static string Statistics2Heading {
+        public static string txtStatistics2Heading {
             get {
-                return ResourceManager.GetString("Statistics2Heading", resourceCulture);
+                return ResourceManager.GetString("txtStatistics2Heading", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Statistics 1 definition ... .
         /// </summary>
-        public static string StatisticsDefinition {
+        public static string txtStatisticsDefinition {
             get {
-                return ResourceManager.GetString("StatisticsDefinition", resourceCulture);
+                return ResourceManager.GetString("txtStatisticsDefinition", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Satistics 1.
         /// </summary>
-        public static string StatisticsHeading {
+        public static string txtStatisticsHeading {
             get {
-                return ResourceManager.GetString("StatisticsHeading", resourceCulture);
+                return ResourceManager.GetString("txtStatisticsHeading", resourceCulture);
             }
         }
     }

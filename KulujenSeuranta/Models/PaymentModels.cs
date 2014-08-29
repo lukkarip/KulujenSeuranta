@@ -7,15 +7,14 @@ using System.ComponentModel;
 using System.Windows;
 
 using KulujenSeuranta.Helpers;
+using Resources.Models;
 
 namespace KulujenSeuranta.Models
 {
-    [LocalizationEnum(typeof(ModelRes.CategoriesTexts))]
+    [LocalizationEnum(typeof(CategoriesTexts))]
     public enum Categories
     {
-        [Display(ResourceType = typeof(ModelRes.CategoriesTexts), Name = "Categories.Books")]
         Books = 1,
-        [Description("Koe2")]
         Children = 2,
         Clothes = 3,
         ElectricityBill = 4,
@@ -26,7 +25,6 @@ namespace KulujenSeuranta.Models
         Presents = 9,
         Rent = 10,
         Restaurant = 11,
-        [Display(ResourceType = typeof(ModelRes.CategoriesTexts), Name = "Categories_TrainAndBusTickets")]
         TrainAndBusTickets = 12,
         Travelling = 13
     }
@@ -36,6 +34,8 @@ namespace KulujenSeuranta.Models
         public int PaymentId { get; set; }
         [Required]
         public decimal Sum { get; set; }
+        [Required, Range(1, 13, ErrorMessageResourceType = typeof(Resources.Models.CustomErrors), 
+                                ErrorMessageResourceName =  "errorCategoryIncorrect")]
         public Categories Category { get; set; }
         [Required]
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]

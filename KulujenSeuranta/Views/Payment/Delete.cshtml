@@ -1,33 +1,33 @@
 ﻿@model KulujenSeuranta.Models.Payment
 @using KulujenSeuranta.Helpers
+@using Resources.Views;
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = @PaymentTexts.txtTitleDelete;
 }
 
-<h2>Delete</h2>
+<h2>@PaymentTexts.txtTitleDelete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>@PaymentTexts.txtDeleteConfirmation</h3>
 <div>
-    <h4>Payment</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Sum)
+            @PaymentTexts.txtSum
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Sum)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Category)
+            @PaymentTexts.txtCategory
         </dt>
 
         <dd>
             @EnumCustomHelper.GetCategory(Model.Category)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Date)
+            @PaymentTexts.txtDate
         </dt>
 
         <dd>
@@ -40,8 +40,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value=@PaymentTexts.btnDelete class="btn btn-default" /> |
+            @Html.ActionLink(PaymentTexts.lnkBackToList, "Index")
         </div>
     }
 </div>

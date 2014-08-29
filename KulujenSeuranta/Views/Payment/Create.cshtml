@@ -1,12 +1,13 @@
 ﻿@model KulujenSeuranta.Models.Payment
 @using KulujenSeuranta.Helpers
 @using KulujenSeuranta.Models
+@using Resources.Views;
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = PaymentTexts.txtTitleCreate;
 }
 
-<h2>Create</h2>
+<h2>@PaymentTexts.txtTitleCreate</h2>
 
 
 @using (Html.BeginForm()) 
@@ -14,11 +15,10 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Payment</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.Sum, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Sum, PaymentTexts.txtSum, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Sum, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Sum, "", new { @class = "text-danger" })
@@ -26,15 +26,20 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @(Html.EnumDropDownListFor<Payment, Categories, @ModelRes.CategoriesTexts>(x => x.Category, "", new { htmlAttributes = new { @class = "form-control dropdown" } }))
+            @Html.LabelFor(model => model.Category, PaymentTexts.txtCategory, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 selectpicker-custom-styles">
+                @(Html.EnumDropDownListFor<Payment, Categories, @Resources.Models.CategoriesTexts>
+                        (x => x.Category, "", new
+                        {
+                            @class = "form-control selectpicker",
+                            @title = PaymentTexts.dropdownCategoryDefault,
+                        }))
                 @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
-</div>
+            </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Date, PaymentTexts.txtDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control datepicker" } })
                 @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
@@ -43,14 +48,13 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value=@PaymentTexts.btnCreate class="btn btn-default" />
             </div>
         </div>
     </div>
-}
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(PaymentTexts.lnkBackToList, "Index")
 </div>
 
 @section Scripts {
@@ -60,4 +64,6 @@
     @Scripts.Render("~/bundles/cultureFi")
     @Scripts.Render("~/bundles/jqueryvalGlobalize")
     @Scripts.Render("~/bundles/kulttuuri")
+    @Scripts.Render("~/bundles/bootstrapSelect")
+}
 }

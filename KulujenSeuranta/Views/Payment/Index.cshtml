@@ -1,25 +1,26 @@
 ﻿@model IEnumerable<KulujenSeuranta.Models.Payment>
 @using KulujenSeuranta.Helpers;
+@using Resources.Views;
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = PaymentTexts.txtTitleIndexPayment;
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(PaymentTexts.lnkCreateNew, "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Sum)
+            @PaymentTexts.txtSum
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Category)
+            @PaymentTexts.txtCategory
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Date)
+            @PaymentTexts.txtDate
         </th>
         <th></th>
     </tr>
@@ -39,9 +40,9 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.PaymentId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.PaymentId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.PaymentId })
+                @Html.ActionLink(PaymentTexts.lnkEdit, "Edit", new { id = item.PaymentId }) |
+                @Html.ActionLink(PaymentTexts.lnkDetails, "Details", new { id = item.PaymentId }) |
+                @Html.ActionLink(PaymentTexts.lnkDelete, "Delete", new { id = item.PaymentId })
             </td>
         </tr>
     }

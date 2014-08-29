@@ -196,6 +196,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CategoriesTexts.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Models\CustomErrors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomErrors.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Account\AccountTexts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountTexts.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Views\Home\HomeTexts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -211,10 +221,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeTexts.sv.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Views\Payment\PaymentTexts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Shared\SharedTexts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SharedTexts.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings\ConfigurationHandler.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-select.css" />
+    <Content Include="Content\bootstrap-select.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\datepicker.css" />
@@ -225,6 +247,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-select.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -349,8 +372,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Resources\Views\Payment\" />
-    <Folder Include="Resources\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -370,23 +391,53 @@
     <EmbeddedResource Include="Resources\Models\CategoriesTexts.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CategoriesTexts.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>ModelRes</CustomToolNamespace>
+      <CustomToolNamespace>Resources.Models</CustomToolNamespace>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\CategoriesTexts.sv.resx" />
+    <EmbeddedResource Include="Resources\Models\CustomErrors.fi.resx" />
+    <EmbeddedResource Include="Resources\Models\CustomErrors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomErrors.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\CustomErrors.sv.resx" />
+    <EmbeddedResource Include="Resources\Views\Account\AccountTexts.fi.resx" />
+    <EmbeddedResource Include="Resources\Views\Account\AccountTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountTexts.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\AccountTexts.sv.resx" />
     <EmbeddedResource Include="Resources\Views\Home\HomeTexts.fi.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeTexts.fi.Designer.cs</LastGenOutput>
       <CustomToolNamespace>ViewRes</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Home\HomeTexts.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeTexts.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>ViewRes</CustomToolNamespace>
+      <CustomToolNamespace>Resources.Views</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Home\HomeTexts.sv.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeTexts.sv.Designer.cs</LastGenOutput>
       <CustomToolNamespace>ViewRes</CustomToolNamespace>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Payment\PaymentTexts.fi.resx" />
+    <EmbeddedResource Include="Resources\Views\Payment\PaymentTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PaymentTexts.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Payment\PaymentTexts.sv.resx" />
+    <EmbeddedResource Include="Resources\Views\Shared\SharedTexts.fi.resx" />
+    <EmbeddedResource Include="Resources\Views\Shared\SharedTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedTexts.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Shared\SharedTexts.sv.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -117,40 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppDefinition" xml:space="preserve">
-    <value>Kulujen Seuranta on sovellus maksujen hallinnointiin.</value>
-  </data>
-  <data name="AppName" xml:space="preserve">
-    <value>Kulujen Seuranta sovellus</value>
-  </data>
-  <data name="PageTitle" xml:space="preserve">
-    <value>Kotisivu</value>
-  </data>
-  <data name="PaymentsBtn" xml:space="preserve">
+  <data name="btnPayments" xml:space="preserve">
     <value>Maksuihin</value>
   </data>
-  <data name="PaymentsDefinition" xml:space="preserve">
+  <data name="btnStatistics1" xml:space="preserve">
+    <value>Tilastoihin</value>
+  </data>
+  <data name="btnStatistics2" xml:space="preserve">
+    <value>Tilastoihin</value>
+  </data>
+  <data name="txtAppDefinition" xml:space="preserve">
+    <value>Kulujen Seuranta on sovellus maksujen hallinnointiin.</value>
+  </data>
+  <data name="txtAppName" xml:space="preserve">
+    <value>Kulujen Seuranta sovellus</value>
+  </data>
+  <data name="txtPageTitle" xml:space="preserve">
+    <value>Etusivu</value>
+  </data>
+  <data name="txtPaymentsDefinition" xml:space="preserve">
     <value>Maksut määritelmä ...</value>
   </data>
-  <data name="PaymentsHeading" xml:space="preserve">
+  <data name="txtPaymentsHeading" xml:space="preserve">
     <value>Maksut</value>
   </data>
-  <data name="Statistics1Btn" xml:space="preserve">
-    <value>Tilastoihin</value>
-  </data>
-  <data name="Statistics2Btn" xml:space="preserve">
-    <value>Tilastoihin</value>
-  </data>
-  <data name="Statistics2Definition" xml:space="preserve">
+  <data name="txtStatistics2Definition" xml:space="preserve">
     <value>Tilastot 2 määritelmä ...</value>
   </data>
-  <data name="Statistics2Heading" xml:space="preserve">
+  <data name="txtStatistics2Heading" xml:space="preserve">
     <value>Tilastot 2</value>
   </data>
-  <data name="StatisticsDefinition" xml:space="preserve">
+  <data name="txtStatisticsDefinition" xml:space="preserve">
     <value>Tilastot 1 määritelmä ...</value>
   </data>
-  <data name="StatisticsHeading" xml:space="preserve">
+  <data name="txtStatisticsHeading" xml:space="preserve">
     <value>Tilastot 1</value>
   </data>
 </root>

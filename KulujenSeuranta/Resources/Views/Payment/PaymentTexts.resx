@@ -117,40 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnPayments" xml:space="preserve">
-    <value>!R Maksuihin</value>
+  <data name="btnCreate" xml:space="preserve">
+    <value>Create</value>
   </data>
-  <data name="btnStatistics1" xml:space="preserve">
-    <value>!R Tilastoihin</value>
+  <data name="btnDelete" xml:space="preserve">
+    <value>Delete</value>
   </data>
-  <data name="btnStatistics2" xml:space="preserve">
-    <value>!R Tilastoihin</value>
+  <data name="btnSave" xml:space="preserve">
+    <value>Save</value>
   </data>
-  <data name="txtAppDefinition" xml:space="preserve">
-    <value>!R Kulujen Seuranta on sovellus maksujen hallinnointiin.</value>
+  <data name="dropdownCategoryDefault" xml:space="preserve">
+    <value>Select category ...</value>
   </data>
-  <data name="txtAppName" xml:space="preserve">
-    <value>!R Kulujen Seuranta sovellus</value>
+  <data name="lnkBackToList" xml:space="preserve">
+    <value>Back to List</value>
   </data>
-  <data name="txtPageTitle" xml:space="preserve">
-    <value>!R Etusivu</value>
+  <data name="lnkCreateNew" xml:space="preserve">
+    <value>Create New</value>
   </data>
-  <data name="txtPaymentsDefinition" xml:space="preserve">
-    <value>!R Maksut määritelmä ...</value>
+  <data name="lnkDelete" xml:space="preserve">
+    <value>Delete</value>
   </data>
-  <data name="txtPaymentsHeading" xml:space="preserve">
-    <value>!R Maksut</value>
+  <data name="lnkDetails" xml:space="preserve">
+    <value>Details</value>
   </data>
-  <data name="txtStatistics2Definition" xml:space="preserve">
-    <value>!R Tilastot 2 määritelmä ...</value>
+  <data name="lnkEdit" xml:space="preserve">
+    <value>Edit</value>
   </data>
-  <data name="txtStatistics2Heading" xml:space="preserve">
-    <value>!R Tilastot 2</value>
+  <data name="txtCategory" xml:space="preserve">
+    <value>Category</value>
   </data>
-  <data name="txtStatisticsDefinition" xml:space="preserve">
-    <value>!R Tilastot 1 määritelmä ...</value>
+  <data name="txtCreate" xml:space="preserve">
+    <value>Create</value>
   </data>
-  <data name="txtStatisticsHeading" xml:space="preserve">
-    <value>!R Tilastot 1</value>
+  <data name="txtDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="txtDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="txtDeleteConfirmation" xml:space="preserve">
+    <value>Are you sure you want to delete this payment?</value>
+  </data>
+  <data name="txtHeadEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="txtHeadIndex" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="txtPayment" xml:space="preserve">
+    <value>Payment</value>
+  </data>
+  <data name="txtSum" xml:space="preserve">
+    <value>Sum</value>
+  </data>
+  <data name="txtTitleCreate" xml:space="preserve">
+    <value>Create payment</value>
+  </data>
+  <data name="txtTitleDelete" xml:space="preserve">
+    <value>Delete payment</value>
+  </data>
+  <data name="txtTitleDetails" xml:space="preserve">
+    <value>Payment details</value>
+  </data>
+  <data name="txtTitleEdit" xml:space="preserve">
+    <value>Edit payment</value>
+  </data>
+  <data name="txtTitleIndexPayment" xml:space="preserve">
+    <value>Payment index</value>
   </data>
 </root>

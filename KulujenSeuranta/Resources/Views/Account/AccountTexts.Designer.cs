@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Resources.Models {
+namespace Resources.Views {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Resources.Models {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class CategoriesTexts {
+    public class AccountTexts {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal CategoriesTexts() {
+        internal AccountTexts() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Resources.Models {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KulujenSeuranta.Resources.Models.CategoriesTexts", typeof(CategoriesTexts).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KulujenSeuranta.Resources.Views.Account.AccountTexts", typeof(AccountTexts).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,119 +61,92 @@ namespace Resources.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Books.
+        ///   Looks up a localized string similar to Login.
         /// </summary>
-        public static string Categories_Books {
+        public static string btnLogin {
             get {
-                return ResourceManager.GetString("Categories.Books", resourceCulture);
+                return ResourceManager.GetString("btnLogin", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Children.
+        ///   Looks up a localized string similar to Register.
         /// </summary>
-        public static string Categories_Children {
+        public static string btnRegister {
             get {
-                return ResourceManager.GetString("Categories.Children", resourceCulture);
+                return ResourceManager.GetString("btnRegister", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clothes.
+        ///   Looks up a localized string similar to Remember me?.
         /// </summary>
-        public static string Categories_Clothes {
+        public static string chkRememberMe {
             get {
-                return ResourceManager.GetString("Categories.Clothes", resourceCulture);
+                return ResourceManager.GetString("chkRememberMe", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Electricity bill.
+        ///   Looks up a localized string similar to Register as a new user.
         /// </summary>
-        public static string Categories_ElectricityBill {
+        public static string lnkRegisterNewUser {
             get {
-                return ResourceManager.GetString("Categories.ElectricityBill", resourceCulture);
+                return ResourceManager.GetString("lnkRegisterNewUser", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Food.
+        ///   Looks up a localized string similar to Confirm password.
         /// </summary>
-        public static string Categories_Food {
+        public static string txtConfirmPassword {
             get {
-                return ResourceManager.GetString("Categories.Food", resourceCulture);
+                return ResourceManager.GetString("txtConfirmPassword", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gas.
+        ///   Looks up a localized string similar to Create a new account.
         /// </summary>
-        public static string Categories_Gas {
+        public static string txtCreateNewAccount {
             get {
-                return ResourceManager.GetString("Categories.Gas", resourceCulture);
+                return ResourceManager.GetString("txtCreateNewAccount", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Other.
+        ///   Looks up a localized string similar to Email.
         /// </summary>
-        public static string Categories_Other {
+        public static string txtEmail {
             get {
-                return ResourceManager.GetString("Categories.Other", resourceCulture);
+                return ResourceManager.GetString("txtEmail", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone bill.
+        ///   Looks up a localized string similar to Password.
         /// </summary>
-        public static string Categories_PhoneBill {
+        public static string txtPassword {
             get {
-                return ResourceManager.GetString("Categories.PhoneBill", resourceCulture);
+                return ResourceManager.GetString("txtPassword", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Presents.
+        ///   Looks up a localized string similar to Log in.
         /// </summary>
-        public static string Categories_Presents {
+        public static string txtTitleLogin {
             get {
-                return ResourceManager.GetString("Categories.Presents", resourceCulture);
+                return ResourceManager.GetString("txtTitleLogin", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rent.
+        ///   Looks up a localized string similar to Register.
         /// </summary>
-        public static string Categories_Rent {
+        public static string txtTitleRegister {
             get {
-                return ResourceManager.GetString("Categories.Rent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Restaurant.
-        /// </summary>
-        public static string Categories_Restaurant {
-            get {
-                return ResourceManager.GetString("Categories.Restaurant", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Train &amp; bus tickets.
-        /// </summary>
-        public static string Categories_TrainAndBusTickets {
-            get {
-                return ResourceManager.GetString("Categories.TrainAndBusTickets", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Travelling.
-        /// </summary>
-        public static string Categories_Travelling {
-            get {
-                return ResourceManager.GetString("Categories.Travelling", resourceCulture);
+                return ResourceManager.GetString("txtTitleRegister", resourceCulture);
             }
         }
     }
