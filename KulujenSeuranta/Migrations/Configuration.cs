@@ -24,7 +24,7 @@ namespace KulujenSeuranta.Migrations
 
         }
 
-        bool AddUserAndRole(KulujenSeuranta.Models.ApplicationDbContext context) 
+        bool AddUserAndRole(KulujenSeuranta.Models.ApplicationDbContext context)
         {
             IdentityResult ir;
             var rm = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));

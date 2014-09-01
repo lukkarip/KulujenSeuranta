@@ -177,13 +177,9 @@
     <Compile Include="Helpers\HtmlHelper.EnumDropDownListFor.cs" />
     <Compile Include="Helpers\LocalizationEnumAttribute.cs" />
     <Compile Include="Infrastructure\SessionHelper.cs" />
-    <Compile Include="Migrations\201408250758390_Initial.cs" />
-    <Compile Include="Migrations\201408250758390_Initial.Designer.cs">
-      <DependentUpon>201408250758390_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201408281202488_Uusin.cs" />
-    <Compile Include="Migrations\201408281202488_Uusin.Designer.cs">
-      <DependentUpon>201408281202488_Uusin.cs</DependentUpon>
+    <Compile Include="Migrations\201409010645323_Initial.cs" />
+    <Compile Include="Migrations\201409010645323_Initial.Designer.cs">
+      <DependentUpon>201409010645323_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -381,11 +377,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201408250758390_Initial.resx">
-      <DependentUpon>201408250758390_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201408281202488_Uusin.resx">
-      <DependentUpon>201408281202488_Uusin.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201409010645323_Initial.resx">
+      <DependentUpon>201409010645323_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Models\CategoriesTexts.fi.resx" />
     <EmbeddedResource Include="Resources\Models\CategoriesTexts.resx">

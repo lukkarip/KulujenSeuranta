@@ -19,7 +19,7 @@ namespace KulujenSeuranta
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-           Database.SetInitializer<KulujenSeuranta.Models.ApplicationDbContext>(null);
+            Database.SetInitializer<KulujenSeuranta.Models.ApplicationDbContext>(null);
         }
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
