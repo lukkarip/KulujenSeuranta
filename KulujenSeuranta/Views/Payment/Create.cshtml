@@ -56,14 +56,15 @@
 <div>
     @Html.ActionLink(PaymentTexts.lnkBackToList, "Index")
 </div>
+    
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/jqueryvalUnobtrusive")
+        @Scripts.Render("~/bundles/globalize")
+        @Scripts.Render("~/bundles/cultureFi")
+        @Scripts.Render("~/bundles/jqueryvalGlobalize")
+        @Scripts.Render("~/bundles/kulttuuri")
+        @Scripts.Render("~/bundles/bootstrapSelect")
+    }
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/jqueryvalUnobtrusive")
-    @Scripts.Render("~/bundles/globalize")
-    @Scripts.Render("~/bundles/cultureFi")
-    @Scripts.Render("~/bundles/jqueryvalGlobalize")
-    @Scripts.Render("~/bundles/kulttuuri")
-    @Scripts.Render("~/bundles/bootstrapSelect")
-}
 }

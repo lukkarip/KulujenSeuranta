@@ -120,4 +120,19 @@
   <data name="errorCategoryIncorrect" xml:space="preserve">
     <value>Category must be selected.</value>
   </data>
+  <data name="errorCategoryRequired" xml:space="preserve">
+    <value>The category field is required.</value>
+  </data>
+  <data name="errorDateRequired" xml:space="preserve">
+    <value>The date field is required.</value>
+  </data>
+  <data name="errorRequired" xml:space="preserve">
+    <value>Value is required.</value>
+  </data>
+  <data name="errorSumInvalid" xml:space="preserve">
+    <value>The sum is invalid. Correct format for values are 10, 10,2 and 10,30 (Max value 999999.99)</value>
+  </data>
+  <data name="errorSumRequired" xml:space="preserve">
+    <value>The sum field is required.</value>
+  </data>
 </root>

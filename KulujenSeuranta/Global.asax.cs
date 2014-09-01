@@ -8,6 +8,10 @@ using System.Web.Routing;
 using System.Data.Entity;
 using System.Globalization;
 
+using KulujenSeuranta.Infrastructure;
+using System.ComponentModel.DataAnnotations;
+
+
 namespace KulujenSeuranta
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -18,6 +22,10 @@ namespace KulujenSeuranta
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            // This is for overriding frameworks default error messages with localized messages in App_GlobalResources folder.
+            ClientDataTypeModelValidatorProvider.ResourceClassKey = "Messages";
+            DefaultModelBinder.ResourceClassKey = "Messages";
 
             Database.SetInitializer<KulujenSeuranta.Models.ApplicationDbContext>(null);
         }

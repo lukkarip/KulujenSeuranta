@@ -117,25 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="errorCategoryIncorrect" xml:space="preserve">
-    <value>Kategoria on valittava.</value>
+  <data name="FieldMustBeDate" xml:space="preserve">
+    <value>{0} must be a date.</value>
   </data>
-  <data name="errorCategoryRequired" xml:space="preserve">
-    <value>Kategoria on pakollinen tieto.</value>
+  <data name="FieldMustBeNumeric" xml:space="preserve">
+    <value>{0} must be a number.</value>
   </data>
-  <data name="errorDateRequired" xml:space="preserve">
-    <value>Päivämäärä on pakollinen tieto.</value>
+  <data name="PropertyValueIsInvalid" xml:space="preserve">
+    <value>The value '{0}' is not valid for {1}.</value>
   </data>
-  <data name="errorFieldRequired" xml:space="preserve">
-    <value>Summa on pakollinen tieto.</value>
-  </data>
-  <data name="errorRequired" xml:space="preserve">
-    <value>Arvo on pakollinen.</value>
-  </data>
-  <data name="errorSumInvalid" xml:space="preserve">
-    <value>Summa on virheellinen. Mahdollisia arvoja ovat 10, 10,2 and 10,30 (Maksimi 999999.99)</value>
-  </data>
-  <data name="errorSumRequired" xml:space="preserve">
-    <value>Summa on pakollinen tieto.</value>
+  <data name="PropertyValueRequired" xml:space="preserve">
+    <value>A value is required.</value>
   </data>
 </root>

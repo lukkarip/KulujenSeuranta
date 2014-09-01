@@ -160,6 +160,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Messages.fi.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.fi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Messages.sv.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.sv.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -377,6 +392,18 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_GlobalResources\Messages.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Messages.fi.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Messages.fi.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Messages.sv.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Messages.sv.designer.cs</LastGenOutput>
+    </Content>
     <EmbeddedResource Include="Migrations\201409010645323_Initial.resx">
       <DependentUpon>201409010645323_Initial.cs</DependentUpon>
     </EmbeddedResource>

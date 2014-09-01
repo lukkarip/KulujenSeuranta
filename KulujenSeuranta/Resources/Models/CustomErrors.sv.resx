@@ -120,4 +120,22 @@
   <data name="errorCategoryIncorrect" xml:space="preserve">
     <value>!R Kategoria on valittava.</value>
   </data>
+  <data name="errorCategoryRequired" xml:space="preserve">
+    <value>!R Kategoria on pakollinen tieto.</value>
+  </data>
+  <data name="errorDateRequired" xml:space="preserve">
+    <value>!R Päivämäärä on pakollinen tieto.</value>
+  </data>
+  <data name="errorFieldRequired" xml:space="preserve">
+    <value>!R Summa on pakollinen tieto.</value>
+  </data>
+  <data name="errorRequired" xml:space="preserve">
+    <value>!R Arvo on pakollinen.</value>
+  </data>
+  <data name="errorSumInvalid" xml:space="preserve">
+    <value>!R Summa on virheellinen. Mahdollisia arvoja ovat 10, 10,2 and 10,30 (Maksimi 999999.99)</value>
+  </data>
+  <data name="errorSumRequired" xml:space="preserve">
+    <value>!R Summa on pakollinen tieto.</value>
+  </data>
 </root>
