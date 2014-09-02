@@ -1,15 +1,24 @@
-﻿
+﻿@model KulujenSeuranta.ViewModels.StatisticsViewModel
+@using KulujenSeuranta.Helpers;
+@using Resources.Views;
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
-<h3>Total = @ViewBag.Total</h3>
+<h3>@StatisticsTexts.txtTotal = @Model.SumOfAllPayments</h3>
 
-@model DotNet.Highcharts.Highcharts
+@foreach (KeyValuePair<KulujenSeuranta.Models.Categories, decimal> item in Model.PaymentsByType)
+{
+    if (item.Value != 0)
+    {
+        <b>@EnumCustomHelper.GetCategory(item.Key): </b>@item.Value
+        <br />
+    }
+}
 
-<p>My Chart</p>
-@(Model)
+@(Model.Chart)
 
 @Scripts.Render("~/bundles/highchart")
 

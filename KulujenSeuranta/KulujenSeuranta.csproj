@@ -253,6 +253,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SharedTexts.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Views\Statistics\StatisticsTexts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatisticsTexts.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings\ConfigurationHandler.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\StatisticsViewModel.cs" />
@@ -510,6 +515,13 @@
       <CustomToolNamespace>Resources.Views</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Shared\SharedTexts.sv.resx" />
+    <EmbeddedResource Include="Resources\Views\Statistics\StatisticsTexts.fi.resx" />
+    <EmbeddedResource Include="Resources\Views\Statistics\StatisticsTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatisticsTexts.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Statistics\StatisticsTexts.sv.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

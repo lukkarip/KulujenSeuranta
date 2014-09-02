@@ -25,10 +25,7 @@ namespace KulujenSeuranta.Controllers
         {
             var statisticsViewModel = new StatisticsViewModel();
 
-            ViewBag.Total = statisticsViewModel.SumOfAllPayments;
-            Highcharts chart = statisticsViewModel.CreateChart;
-
-            return View(chart);
+            return View(statisticsViewModel);
         }
     }
 }
