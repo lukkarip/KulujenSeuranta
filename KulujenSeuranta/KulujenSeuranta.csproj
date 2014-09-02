@@ -21,6 +21,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <ApplicationInsightsResourceId>/subscriptions/a6876813-dee0-4b59-9696-38f2cf2403c7/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/KulujenSeuranta</ApplicationInsightsResourceId>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,6 +42,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNet.Highcharts">
+      <HintPath>..\packages\DotNet.Highcharts.4.0\lib\DotNet.Highcharts.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ApplicationInsights">
       <HintPath>..\packages\Microsoft.ApplicationInsights.0.9.0-build06428\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
@@ -250,6 +255,8 @@
     </Compile>
     <Compile Include="Settings\ConfigurationHandler.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\StatisticsViewModel.cs" />
+    <Compile Include="ViewModels\TransactionCount.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-select.css" />
@@ -277,6 +284,39 @@
     <Content Include="Scripts\globalize\cultures\globalize.culture.sv-SE.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.sv.js" />
     <Content Include="Scripts\globalize\globalize.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\adapters\standalone-framework.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\adapters\standalone-framework.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\highcharts-3d.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\highcharts-3d.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\highcharts-all.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\highcharts-more.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\highcharts-more.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\highcharts.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\highcharts.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\canvas-tools.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\canvas-tools.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\data.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\data.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\drilldown.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\drilldown.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\exporting.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\exporting.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\funnel.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\funnel.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\heatmap.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\heatmap.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\no-data-to-display.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\solid-gauge.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\modules\solid-gauge.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\themes\dark-blue.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\themes\dark-green.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\themes\dark-unica.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\themes\gray.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\themes\grid-light.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\themes\grid.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\themes\sand-signika.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\themes\skies.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -390,7 +430,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -500,6 +539,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

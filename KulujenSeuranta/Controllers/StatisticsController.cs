@@ -6,8 +6,12 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using KulujenSeuranta.Models;
 using Microsoft.AspNet.Identity;
+using KulujenSeuranta.Models;
+using KulujenSeuranta.ViewModels;
+
+using DotNet.Highcharts;
+
 
 namespace KulujenSeuranta.Controllers
 {
@@ -19,11 +23,12 @@ namespace KulujenSeuranta.Controllers
         [Authorize(Roles = "canEdit")]
         public ActionResult Index()
         {
-            IEnumerable<Payment> payments = db.Payments.ToList().Where(p => p.User.Id == User.Identity.GetUserId());
-            decimal allPayments = payments.Sum(payment => payment.Sum);
-            ViewBag.Total = allPayments;
+            var statisticsViewModel = new StatisticsViewModel();
 
-            return View();
+            ViewBag.Total = statisticsViewModel.SumOfAllPayments;
+            Highcharts chart = statisticsViewModel.CreateChart;
+
+            return View(chart);
         }
     }
 }
