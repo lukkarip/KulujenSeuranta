@@ -61,7 +61,7 @@ namespace Resources.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Payments.
+        ///   Looks up a localized string similar to Payments ».
         /// </summary>
         public static string btnPayments {
             get {
@@ -70,7 +70,7 @@ namespace Resources.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Statistics.
+        ///   Looks up a localized string similar to Statistics ».
         /// </summary>
         public static string btnStatistics1 {
             get {
@@ -79,7 +79,7 @@ namespace Resources.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Statistics.
+        ///   Looks up a localized string similar to Statistics ».
         /// </summary>
         public static string btnStatistics2 {
             get {

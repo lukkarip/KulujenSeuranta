@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnPayments" xml:space="preserve">
-    <value>!R Maksuihin</value>
+    <value>!R Maksuihin »</value>
   </data>
   <data name="btnStatistics1" xml:space="preserve">
-    <value>!R Tilastoihin</value>
+    <value>!R Tilastoihin »</value>
   </data>
   <data name="btnStatistics2" xml:space="preserve">
-    <value>!R Tilastoihin</value>
+    <value>!R Tilastoihin »</value>
   </data>
   <data name="txtAppDefinition" xml:space="preserve">
     <value>!R Kulujen Seuranta on sovellus maksujen hallinnointiin.</value>

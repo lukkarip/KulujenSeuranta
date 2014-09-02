@@ -117,40 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnPayments" xml:space="preserve">
-    <value>Maksuihin »</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="btnStatistics1" xml:space="preserve">
-    <value>Tilastoihin »</value>
-  </data>
-  <data name="btnStatistics2" xml:space="preserve">
-    <value>Tilastoihin »</value>
-  </data>
-  <data name="txtAppDefinition" xml:space="preserve">
-    <value>Kulujen Seuranta on sovellus maksujen hallinnointiin.</value>
-  </data>
-  <data name="txtAppName" xml:space="preserve">
-    <value>Kulujen Seuranta sovellus</value>
-  </data>
-  <data name="txtPageTitle" xml:space="preserve">
-    <value>Etusivu</value>
-  </data>
-  <data name="txtPaymentsDefinition" xml:space="preserve">
-    <value>Maksut määritelmä ...</value>
-  </data>
-  <data name="txtPaymentsHeading" xml:space="preserve">
-    <value>Maksut</value>
-  </data>
-  <data name="txtStatistics2Definition" xml:space="preserve">
-    <value>Tilastot 2 määritelmä ...</value>
-  </data>
-  <data name="txtStatistics2Heading" xml:space="preserve">
-    <value>Tilastot 2</value>
-  </data>
-  <data name="txtStatisticsDefinition" xml:space="preserve">
-    <value>Tilastot 1 määritelmä ...</value>
-  </data>
-  <data name="txtStatisticsHeading" xml:space="preserve">
-    <value>Tilastot 1</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

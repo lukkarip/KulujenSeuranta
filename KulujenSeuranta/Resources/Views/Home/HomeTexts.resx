@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnPayments" xml:space="preserve">
-    <value>Payments</value>
+    <value>Payments »</value>
   </data>
   <data name="btnStatistics1" xml:space="preserve">
-    <value>Statistics</value>
+    <value>Statistics »</value>
   </data>
   <data name="btnStatistics2" xml:space="preserve">
-    <value>Statistics</value>
+    <value>Statistics »</value>
   </data>
   <data name="txtAppDefinition" xml:space="preserve">
     <value>Expense Management is application for managing your payments.</value>

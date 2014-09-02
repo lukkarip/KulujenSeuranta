@@ -28,7 +28,7 @@ namespace KulujenSeuranta.Models
         Travelling = 13
     }
 
-    public class Payment
+    public class Payment : BaseEntity
     {
         public int PaymentId { get; set; }
         [RequiredLocalized]

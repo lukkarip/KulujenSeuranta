@@ -19,7 +19,7 @@ namespace KulujenSeuranta.Controllers
         [Authorize(Roles = "canEdit")]
         public ActionResult Index()
         {
-            return View(db.Payments.ToList());
+            return View(db.Payments.ToList().Where(p => p.User.Id == User.Identity.GetUserId()));
         }
 
         // GET: Payment/Details/5
@@ -96,7 +96,7 @@ namespace KulujenSeuranta.Controllers
         [Authorize(Roles = "canEdit")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PaymentId,Sum,Category,Date")] Payment payment)
+        public ActionResult Edit([Bind(Include = "PaymentId,Sum,Category,Date,Created,CreatedUser,Modified,ModifiedUser")] Payment payment)
         {
             AddCurrentUserToPayment(payment);
             ModelState.Clear();

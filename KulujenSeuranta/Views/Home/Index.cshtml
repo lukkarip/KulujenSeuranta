@@ -14,25 +14,21 @@
         <h2>@HomeTexts.txtPaymentsHeading</h2>
         <p>@HomeTexts.txtPaymentsDefinition</p>
         <p>
-            <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">
-                @HomeTexts.btnPayments &raquo;
-            </a>
+            @Html.ActionLink(@HomeTexts.btnPayments, "Index", "Payment", null, new { @class = "btn btn-default" })
         </p>
     </div>
     <div class="col-md-4">
         <h2>@HomeTexts.txtStatisticsHeading</h2>
         <p>@HomeTexts.txtStatisticsDefinition</p>
         <p>
-            <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">
-                @HomeTexts.btnStatistics1 &raquo;
-            </a>
+            @Html.ActionLink(@HomeTexts.btnStatistics1, "Index", "Statistics", null, new { @class = "btn btn-default" })
         </p>
     </div>
     <div class="col-md-4">
         <h2>@HomeTexts.txtStatistics2Heading</h2>
         <p>@HomeTexts.txtStatistics2Definition</p>
         <p>
-            <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">
+            <a class="btn btn-default">
                 @HomeTexts.btnStatistics2 &raquo;
             </a>
         </p>

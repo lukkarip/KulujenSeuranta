@@ -184,6 +184,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,8 +197,13 @@
     <Compile Include="Migrations\201409010645323_Initial.Designer.cs">
       <DependentUpon>201409010645323_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409020715222_BaseEntity_added.cs" />
+    <Compile Include="Migrations\201409020715222_BaseEntity_added.Designer.cs">
+      <DependentUpon>201409020715222_BaseEntity_added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PaymentModels.cs" />
@@ -380,9 +386,11 @@
     <Content Include="Views\Payment\Details.cshtml" />
     <Content Include="Views\Payment\Edit.cshtml" />
     <Content Include="Views\Payment\Index.cshtml" />
+    <Content Include="Views\Statistics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -406,6 +414,9 @@
     </Content>
     <EmbeddedResource Include="Migrations\201409010645323_Initial.resx">
       <DependentUpon>201409010645323_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409020715222_BaseEntity_added.resx">
+      <DependentUpon>201409020715222_BaseEntity_added.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Models\CategoriesTexts.fi.resx" />
     <EmbeddedResource Include="Resources\Models\CategoriesTexts.resx">
@@ -451,7 +462,9 @@
       <CustomToolNamespace>Resources.Views</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Payment\PaymentTexts.sv.resx" />
-    <EmbeddedResource Include="Resources\Views\Shared\SharedTexts.fi.resx" />
+    <EmbeddedResource Include="Resources\Views\Shared\SharedTexts.fi.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Shared\SharedTexts.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SharedTexts.Designer.cs</LastGenOutput>
