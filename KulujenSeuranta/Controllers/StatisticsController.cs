@@ -27,5 +27,18 @@ namespace KulujenSeuranta.Controllers
 
             return View(statisticsViewModel);
         }
+
+        [Authorize(Roles = "canEdit")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index([Bind(Include = "SearchDate")] StatisticsViewModel statisticsVM)
+        {
+            if (statisticsVM.SearchDate.UserInputDate == null)
+            {
+                return View(statisticsVM);
+            }
+
+            return View("MonthlyView", statisticsVM);
+        }
     }
 }

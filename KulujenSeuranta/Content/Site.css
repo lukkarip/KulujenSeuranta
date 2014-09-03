@@ -39,3 +39,7 @@ textarea {
 .selectpicker-custom-styles {
     max-width: 310px;
 }
+
+.floatLeft {
+    float: left;
+}

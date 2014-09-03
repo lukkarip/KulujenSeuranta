@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Resources.Views {
+namespace Resources.Models {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Resources.Views {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class StatisticsTexts {
+    public class ChartTexts {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal StatisticsTexts() {
+        internal ChartTexts() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Resources.Views {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KulujenSeuranta.Resources.Views.Statistics.StatisticsTexts", typeof(StatisticsTexts).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KulujenSeuranta.Resources.Models.ChartTexts", typeof(ChartTexts).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,29 @@ namespace Resources.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select month.
+        ///   Looks up a localized string similar to Euros.
         /// </summary>
-        public static string btnSelectMonth {
+        public static string txtEuros {
             get {
-                return ResourceManager.GetString("btnSelectMonth", resourceCulture);
+                return ResourceManager.GetString("txtEuros", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Index.
+        ///   Looks up a localized string similar to Monthly expenses.
         /// </summary>
-        public static string txtIndex {
+        public static string txtMonthlyExpenses {
             get {
-                return ResourceManager.GetString("txtIndex", resourceCulture);
+                return ResourceManager.GetString("txtMonthlyExpenses", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly View.
+        ///   Looks up a localized string similar to Sum on all expenses by category (€).
         /// </summary>
-        public static string txtMonthlyView {
+        public static string txtSumOfExpenses {
             get {
-                return ResourceManager.GetString("txtMonthlyView", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total payments.
-        /// </summary>
-        public static string txtTotal {
-            get {
-                return ResourceManager.GetString("txtTotal", resourceCulture);
+                return ResourceManager.GetString("txtSumOfExpenses", resourceCulture);
             }
         }
     }

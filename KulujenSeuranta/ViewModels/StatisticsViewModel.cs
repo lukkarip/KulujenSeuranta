@@ -5,12 +5,16 @@ using System.Web;
 using System.Data;
 using System.Data.Entity;
 using Microsoft.AspNet.Identity;
-using KulujenSeuranta.Models;
+using System.ComponentModel.DataAnnotations;
 
 using DotNet.Highcharts;
 using DotNet.Highcharts.Options;
 using DotNet.Highcharts.Enums;
 using DotNet.Highcharts.Helpers;
+
+using KulujenSeuranta.Models;
+using KulujenSeuranta.Helpers;
+using Resources.Models;
 
 namespace KulujenSeuranta.ViewModels
 {
@@ -19,17 +23,29 @@ namespace KulujenSeuranta.ViewModels
         private ApplicationDbContext db;
         private IEnumerable<Payment> AllPayments;
 
-        public Dictionary<Categories, decimal> PaymentsByType { get; private set; }
-        public decimal SumOfAllPayments { get; private set; }
-        public Highcharts Chart { get; set; }
+        public Dictionary<Categories, decimal> PaymentsByTypeInSelectedMonth 
+        {
+            get { return GetPaymentsByType(); }
+        }
+
+        public decimal SumOfAllPaymentsInSelectedMonth 
+        {
+            get { return CalculateSumOfAllPaymentsInMonth(); }
+        }
+
+        public Highcharts ChartInSelectedMonth 
+        {
+            get { return CreateChart(); }
+        }
+
+        [Required]
+        public SearchDate SearchDate { get; set; }
 
         public StatisticsViewModel()
         {
             db = new ApplicationDbContext();
             GetAllPayments();
-            GetPaymentsByType();
-            CalculateSumOfAllPayments();
-            CreateChart();
+            SearchDate = new SearchDate();
         }
 
         private void GetAllPayments()
@@ -37,68 +53,39 @@ namespace KulujenSeuranta.ViewModels
             AllPayments = db.Payments.ToList().Where(p => p.User.Id == HttpContext.Current.User.Identity.GetUserId());
         }
 
-        private void GetPaymentsByType() 
+        private Dictionary<Categories, decimal> GetPaymentsByType() 
         {
-            IEnumerable<Payment> payments = AllPayments;
-            PaymentsByType = CreatePaymentsByTypeDictionary();
+            Dictionary<Categories, decimal> paymentsByTypeInSelectedMonth = new Dictionary<Categories, decimal>();
+            List<Payment> payments = GetAllSearchDatePayments();
+            paymentsByTypeInSelectedMonth = CreatePaymentsByTypeDictionary();
 
             foreach (Payment payment in payments)
             {
-                PaymentsByType[payment.Category] += payment.Sum;
+                paymentsByTypeInSelectedMonth[payment.Category] += payment.Sum;
             }
+
+            return paymentsByTypeInSelectedMonth;
         }
 
-        private void CalculateSumOfAllPayments()
+        private decimal CalculateSumOfAllPaymentsInMonth()
         {
-            SumOfAllPayments = AllPayments.Sum(payment => payment.Sum);
+            return GetAllSearchDatePayments().Sum(payment => payment.Sum);
         }
 
-        private void CreateChart() 
+        private List<Payment> GetAllSearchDatePayments()
         {
-            var transactionCounts = new List<TransactionCount> 
+            var searchDatePayments = new List<Payment>();
+
+            foreach (Payment payment in AllPayments)
             {
-                new TransactionCount() { MonthName = "January", Count = 30 },
-                new TransactionCount() { MonthName = "February", Count = 40 },
-                new TransactionCount() { MonthName = "March", Count = 4 },
-                new TransactionCount() { MonthName = "April", Count = 35 },
-            };
-
-            // modify dta type to make it of Array type
-            var xDataMonths = transactionCounts.Select(i => i.MonthName).ToArray();
-            var yDataCounts = transactionCounts.Select(i => new object[] { i.Count }).ToArray();
-
-            Chart = new Highcharts("chart")
-                // define the type of chart
-                .InitChart(new Chart { DefaultSeriesType = ChartTypes.Line })
-                // overall Title of the chart
-                .SetTitle(new Title { Text = "Incoming Transactions per hour" })
-                // small label below the main Title
-                .SetSubtitle(new Subtitle { Text = "Accounting" })
-                // load the X values
-                .SetXAxis(new XAxis { Categories = xDataMonths })
-                // set the Y title
-                .SetYAxis(new YAxis { Title = new YAxisTitle { Text = "Number of Transactions" } })
-                .SetTooltip(new Tooltip
+                if (payment.Date.Year == SearchDate.Year &&
+                    payment.Date.Month == SearchDate.Month)
                 {
-                    Enabled = true,
-                    Formatter = @"function() { return '<b>' + this.series.name + '</b><br/>' + this.x + ': ' + this.y; }"
-                })
-                .SetPlotOptions(new PlotOptions
-                {
-                    Line = new PlotOptionsLine
-                    {
-                        DataLabels = new PlotOptionsLineDataLabels
-                        {
-                            Enabled = true
-                        },
-                        EnableMouseTracking = false
-                    }
-                })
-                // Load the Y values
-                .SetSeries(new[] {
-                new Series { Name = "Hour", Data = new Data(yDataCounts)}
+                    searchDatePayments.Add(payment);
+                }
+            }
 
-            });
+            return searchDatePayments;
         }
 
         private Dictionary<Categories, decimal> CreatePaymentsByTypeDictionary()
@@ -112,5 +99,57 @@ namespace KulujenSeuranta.ViewModels
 
             return paymentDictionary;
         }
+
+        private Highcharts CreateChart() 
+        {
+            List<string> xAxisValuesList = new List<string>();
+            List<decimal> yAxisValues = new List<decimal>();
+
+            Dictionary<Categories, decimal> paymentsByType = GetPaymentsByType();
+
+            foreach (Categories category in (Categories[])Enum.GetValues(typeof(Categories)))
+            {
+                xAxisValuesList.Add(EnumCustomHelper.GetCategory(category));
+                yAxisValues.Add(paymentsByType[category]);
+            }
+
+            Highcharts chart = new Highcharts("chart")
+                .InitChart(new Chart { DefaultSeriesType = ChartTypes.Column })
+                .SetTitle(new Title { Text = ChartTexts.txtMonthlyExpenses })
+                //.SetSubtitle(new Subtitle { Text = "" })
+                .SetXAxis(new XAxis { Categories = xAxisValuesList.ToArray() })
+                .SetYAxis(new YAxis
+                {
+                    Min = 0,
+                    Title = new YAxisTitle { Text = ChartTexts.txtSumOfExpenses }
+                })
+                .SetLegend(new Legend
+                {
+                    Layout = Layouts.Vertical,
+                    Align = HorizontalAligns.Left,
+                    VerticalAlign = VerticalAligns.Top,
+                    X = 100,
+                    Y = 70,
+                    Floating = true,
+                    BackgroundColor = new BackColorOrGradient(System.Drawing.ColorTranslator.FromHtml("#FFFFFF")),
+                    Shadow = true
+                })
+                .SetTooltip(new Tooltip { Formatter = @"function() { return ''+ this.x +': '+ this.y +' €'; }" })
+                .SetPlotOptions(new PlotOptions
+                {
+                    Column = new PlotOptionsColumn
+                    {
+                        PointPadding = 0.2,
+                        BorderWidth = 0
+                    }
+                })
+                .SetSeries(new[]
+                {
+                    new Series { Name = ChartTexts.txtEuros, Data = new Data( yAxisValues.Cast<object>().ToArray() ) },
+                });
+
+            return chart;
+        }
+
     }
 }

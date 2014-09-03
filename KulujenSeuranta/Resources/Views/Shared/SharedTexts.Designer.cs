@@ -151,6 +151,15 @@ namespace Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        public static string lnkStatistics {
+            get {
+                return ResourceManager.GetString("lnkStatistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Swedish.
         /// </summary>
         public static string lnkSwedish {

@@ -218,6 +218,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CategoriesTexts.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Models\ChartTexts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChartTexts.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Models\CustomErrors.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -260,6 +265,7 @@
     </Compile>
     <Compile Include="Settings\ConfigurationHandler.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\SearchDate.cs" />
     <Compile Include="ViewModels\StatisticsViewModel.cs" />
     <Compile Include="ViewModels\TransactionCount.cs" />
   </ItemGroup>
@@ -385,6 +391,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\statistics.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -432,6 +439,7 @@
     <Content Include="Views\Payment\Edit.cshtml" />
     <Content Include="Views\Payment\Index.cshtml" />
     <Content Include="Views\Statistics\Index.cshtml" />
+    <Content Include="Views\Statistics\MonthlyView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -469,6 +477,13 @@
       <CustomToolNamespace>Resources.Models</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Models\CategoriesTexts.sv.resx" />
+    <EmbeddedResource Include="Resources\Models\ChartTexts.fi.resx" />
+    <EmbeddedResource Include="Resources\Models\ChartTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChartTexts.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\ChartTexts.sv.resx" />
     <EmbeddedResource Include="Resources\Models\CustomErrors.fi.resx" />
     <EmbeddedResource Include="Resources\Models\CustomErrors.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

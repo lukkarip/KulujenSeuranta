@@ -3,23 +3,29 @@
 @using Resources.Views;
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = StatisticsTexts.txtIndex;
 }
 
-<h2>Index</h2>
-<h3>@StatisticsTexts.txtTotal = @Model.SumOfAllPayments</h3>
+<h2>@StatisticsTexts.txtIndex</h2>
 
-@foreach (KeyValuePair<KulujenSeuranta.Models.Categories, decimal> item in Model.PaymentsByType)
+@using (Html.BeginForm())
 {
-    if (item.Value != 0)
-    {
-        <b>@EnumCustomHelper.GetCategory(item.Key): </b>@item.Value
-        <br />
-    }
+    @Html.AntiForgeryToken()
+    
+    <div class="form-group">
+        <div>
+            @Html.EditorFor(model => model.SearchDate.UserInputDate, new { htmlAttributes = new { @id = "datepicker", @class = "form-control floatLeft" } })
+            <input type="submit" value=@StatisticsTexts.btnSelectMonth class="btn btn-default" />
+        </div>
+    </div>
 }
+<br /><br />
 
-@(Model.Chart)
-
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jqueryvalUnobtrusive")
+@Scripts.Render("~/bundles/globalize")
+@Scripts.Render("~/bundles/cultureFi")
+@Scripts.Render("~/bundles/statistics")
 @Scripts.Render("~/bundles/highchart")
 
 

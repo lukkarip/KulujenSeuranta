@@ -147,6 +147,9 @@
   <data name="lnkRegister" xml:space="preserve">
     <value>Rekisteröidy</value>
   </data>
+  <data name="lnkStatistics" xml:space="preserve">
+    <value>Tilastot</value>
+  </data>
   <data name="lnkSwedish" xml:space="preserve">
     <value>Ruotsi</value>
   </data>

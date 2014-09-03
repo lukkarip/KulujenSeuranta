@@ -147,6 +147,9 @@
   <data name="lnkRegister" xml:space="preserve">
     <value>Registrera</value>
   </data>
+  <data name="lnkStatistics" xml:space="preserve">
+    <value>!R Tilastot</value>
+  </data>
   <data name="lnkSwedish" xml:space="preserve">
     <value>Svenska</value>
   </data>
