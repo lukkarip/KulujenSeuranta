@@ -88,6 +88,15 @@ namespace Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select.
+        /// </summary>
+        public static string btnSelect {
+            get {
+                return ResourceManager.GetString("btnSelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select category ....
         /// </summary>
         public static string dropdownCategoryDefault {
@@ -210,6 +219,15 @@ namespace Resources.Views {
         public static string txtPayment {
             get {
                 return ResourceManager.GetString("txtPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payments.
+        /// </summary>
+        public static string txtPayments {
+            get {
+                return ResourceManager.GetString("txtPayments", resourceCulture);
             }
         }
         

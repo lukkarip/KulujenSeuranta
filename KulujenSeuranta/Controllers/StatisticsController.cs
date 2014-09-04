@@ -17,28 +17,27 @@ namespace KulujenSeuranta.Controllers
 {
     public class StatisticsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
         // GET: Statistics
         [Authorize(Roles = "canEdit")]
         public ActionResult Index()
         {
             var statisticsViewModel = new StatisticsViewModel();
+            statisticsViewModel.SearchDate = new SearchDate { UserInputDate = DateTime.Now.Month + "-" + DateTime.Now.Year };
 
-            return View(statisticsViewModel);
+            return View("MonthlyView", statisticsViewModel);
         }
 
         [Authorize(Roles = "canEdit")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "SearchDate")] StatisticsViewModel statisticsVM)
+        public ActionResult Index([Bind(Include = "SearchDate")] StatisticsViewModel statisticsViewModel)
         {
-            if (statisticsVM.SearchDate.UserInputDate == null)
+            if (statisticsViewModel.SearchDate.UserInputDate == null)
             {
-                return View(statisticsVM);
+                return View(statisticsViewModel);
             }
 
-            return View("MonthlyView", statisticsVM);
+            return View("MonthlyView", statisticsViewModel);
         }
     }
 }

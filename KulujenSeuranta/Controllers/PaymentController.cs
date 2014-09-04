@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using KulujenSeuranta.Models;
 using Microsoft.AspNet.Identity;
 
+using KulujenSeuranta.ViewModels;
+
 namespace KulujenSeuranta.Controllers
 {
     public class PaymentController : Controller
@@ -19,7 +21,24 @@ namespace KulujenSeuranta.Controllers
         [Authorize(Roles = "canEdit")]
         public ActionResult Index()
         {
-            return View(db.Payments.ToList().Where(p => p.User.Id == User.Identity.GetUserId()));
+            var paymentsViewModel = new PaymentsViewModel();
+            // Default search date is always current month & year
+            paymentsViewModel.SearchDate = new SearchDate { UserInputDate = DateTime.Now.Month + "-" + DateTime.Now.Year };
+
+            return View(paymentsViewModel);
+        }
+
+        [Authorize(Roles = "canEdit")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index([Bind(Include = "SearchDate")] PaymentsViewModel paymentsViewModel)
+        {
+            if (paymentsViewModel.SearchDate.UserInputDate == null)
+            {
+                return View(paymentsViewModel);
+            }
+
+            return View(paymentsViewModel);
         }
 
         // GET: Payment/Details/5

@@ -265,9 +265,9 @@
     </Compile>
     <Compile Include="Settings\ConfigurationHandler.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\PaymentsViewModel.cs" />
     <Compile Include="ViewModels\SearchDate.cs" />
     <Compile Include="ViewModels\StatisticsViewModel.cs" />
-    <Compile Include="ViewModels\TransactionCount.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-select.css" />
@@ -389,6 +389,7 @@
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\payments.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\statistics.js" />
@@ -438,7 +439,6 @@
     <Content Include="Views\Payment\Details.cshtml" />
     <Content Include="Views\Payment\Edit.cshtml" />
     <Content Include="Views\Payment\Index.cshtml" />
-    <Content Include="Views\Statistics\Index.cshtml" />
     <Content Include="Views\Statistics\MonthlyView.cshtml" />
   </ItemGroup>
   <ItemGroup>

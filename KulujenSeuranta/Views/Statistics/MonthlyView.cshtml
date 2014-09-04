@@ -3,15 +3,15 @@
 @using Resources.Views;
 
 @{
-    ViewBag.Title = StatisticsTexts.txtIndex;
+    ViewBag.Title = @StatisticsTexts.txtMonthlyView;
 }
 
-<h2>@StatisticsTexts.txtIndex</h2>
+<h2>@StatisticsTexts.txtMonthlyView</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-group">
         <div>
             @Html.EditorFor(model => model.SearchDate.UserInputDate, new { htmlAttributes = new { @id = "datepicker", @class = "form-control floatLeft" } })
@@ -19,7 +19,23 @@
         </div>
     </div>
 }
-<br /><br />
+
+<h3>
+    @StatisticsTexts.txtTotal (@Model.SearchDate.Month.@Model.SearchDate.Year) = @Model.SumOfAllPaymentsInSelectedMonth €
+</h3>
+
+<!--
+@foreach (KeyValuePair<KulujenSeuranta.Models.Categories, decimal> item in Model.PaymentsByTypeInSelectedMonth)
+{
+    if (item.Value != 0)
+    {
+        <b>@EnumCustomHelper.GetCategory(item.Key): </b>@item.Value
+        <br />
+    }
+}
+-->
+
+@(Model.ChartInSelectedMonth)
 
 @Scripts.Render("~/bundles/jqueryval")
 @Scripts.Render("~/bundles/jqueryvalUnobtrusive")
@@ -27,6 +43,3 @@
 @Scripts.Render("~/bundles/cultureFi")
 @Scripts.Render("~/bundles/statistics")
 @Scripts.Render("~/bundles/highchart")
-
-
-

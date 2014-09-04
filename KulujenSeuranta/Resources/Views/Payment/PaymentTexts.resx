@@ -126,6 +126,9 @@
   <data name="btnSave" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="btnSelect" xml:space="preserve">
+    <value>Select</value>
+  </data>
   <data name="dropdownCategoryDefault" xml:space="preserve">
     <value>Select category ...</value>
   </data>
@@ -167,6 +170,9 @@
   </data>
   <data name="txtPayment" xml:space="preserve">
     <value>Payment</value>
+  </data>
+  <data name="txtPayments" xml:space="preserve">
+    <value>Payments</value>
   </data>
   <data name="txtSum" xml:space="preserve">
     <value>Sum</value>

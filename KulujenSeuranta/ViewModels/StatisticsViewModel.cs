@@ -20,8 +20,8 @@ namespace KulujenSeuranta.ViewModels
 {
     public class StatisticsViewModel
     {
-        private ApplicationDbContext db;
-        private IEnumerable<Payment> AllPayments;
+        private ApplicationDbContext _db;
+        private IEnumerable<Payment> _AllPayments;
 
         public Dictionary<Categories, decimal> PaymentsByTypeInSelectedMonth 
         {
@@ -43,14 +43,14 @@ namespace KulujenSeuranta.ViewModels
 
         public StatisticsViewModel()
         {
-            db = new ApplicationDbContext();
+            _db = new ApplicationDbContext();
             GetAllPayments();
             SearchDate = new SearchDate();
         }
 
         private void GetAllPayments()
         {
-            AllPayments = db.Payments.ToList().Where(p => p.User.Id == HttpContext.Current.User.Identity.GetUserId());
+            _AllPayments = _db.Payments.ToList().Where(p => p.User.Id == HttpContext.Current.User.Identity.GetUserId());
         }
 
         private Dictionary<Categories, decimal> GetPaymentsByType() 
@@ -76,7 +76,7 @@ namespace KulujenSeuranta.ViewModels
         {
             var searchDatePayments = new List<Payment>();
 
-            foreach (Payment payment in AllPayments)
+            foreach (Payment payment in _AllPayments)
             {
                 if (payment.Date.Year == SearchDate.Year &&
                     payment.Date.Month == SearchDate.Month)

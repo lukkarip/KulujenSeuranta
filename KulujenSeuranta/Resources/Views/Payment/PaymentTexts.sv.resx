@@ -126,6 +126,9 @@
   <data name="btnSave" xml:space="preserve">
     <value>Lagra</value>
   </data>
+  <data name="btnSelect" xml:space="preserve">
+    <value>!R Valitse</value>
+  </data>
   <data name="dropdownCategoryDefault" xml:space="preserve">
     <value>!R Valitse kategoria ...</value>
   </data>
@@ -167,6 +170,9 @@
   </data>
   <data name="txtPayment" xml:space="preserve">
     <value>Utgift</value>
+  </data>
+  <data name="txtPayments" xml:space="preserve">
+    <value>!R Payments</value>
   </data>
   <data name="txtSum" xml:space="preserve">
     <value>!R Summa</value>

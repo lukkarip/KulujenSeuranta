@@ -1,4 +1,4 @@
-﻿@model IEnumerable<KulujenSeuranta.Models.Payment>
+﻿@model KulujenSeuranta.ViewModels.PaymentsViewModel
 @using KulujenSeuranta.Helpers;
 @using Resources.Views;
 
@@ -6,7 +6,23 @@
     ViewBag.Title = PaymentTexts.txtTitleIndexPayment;
 }
 
-<h2>Index</h2>
+<h2>@PaymentTexts.txtHeadIndex</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <div>
+            @Html.EditorFor(model => model.SearchDate.UserInputDate, new { htmlAttributes = new { @id = "datepicker",  @class = "form-control floatLeft"  } })
+            <input type="submit" value=@StatisticsTexts.btnSelectMonth class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<h3>
+    @PaymentTexts.txtPayments (@Model.SearchDate.Month.@Model.SearchDate.Year)
+</h3>
 
 <p>
     @Html.ActionLink(PaymentTexts.lnkCreateNew, "Create")
@@ -25,9 +41,9 @@
         <th></th>
     </tr>
 
-@if (Model != null)
+@if (Model.PaymentsByTypeInSelectedMonth != null)
 {
-    foreach (var item in Model)
+    foreach (var item in Model.PaymentsByTypeInSelectedMonth)
     {
         <tr>
             <td>
@@ -49,3 +65,9 @@
 }
 
 </table>
+
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jqueryvalUnobtrusive")
+@Scripts.Render("~/bundles/globalize")
+@Scripts.Render("~/bundles/cultureFi")
+@Scripts.Render("~/bundles/payments")
