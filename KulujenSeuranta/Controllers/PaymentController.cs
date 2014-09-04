@@ -18,7 +18,7 @@ namespace KulujenSeuranta.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Payment
-        [Authorize(Roles = "canEdit")]
+        [Authorize(Roles = "canRead")]
         public ActionResult Index()
         {
             var paymentsViewModel = new PaymentsViewModel();
@@ -28,7 +28,7 @@ namespace KulujenSeuranta.Controllers
             return View(paymentsViewModel);
         }
 
-        [Authorize(Roles = "canEdit")]
+        [Authorize(Roles = "canRead")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include = "SearchDate")] PaymentsViewModel paymentsViewModel)
@@ -42,7 +42,7 @@ namespace KulujenSeuranta.Controllers
         }
 
         // GET: Payment/Details/5
-        [Authorize(Roles = "canEdit")]
+        [Authorize(Roles = "canRead")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -61,7 +61,7 @@ namespace KulujenSeuranta.Controllers
         }
 
         // GET: Payment/Create
-        [Authorize(Roles = "canEdit")]
+        [Authorize(Roles = "canRead")]
         public ActionResult Create()
         {
             return View();
@@ -91,7 +91,7 @@ namespace KulujenSeuranta.Controllers
         }
 
         // GET: Payment/Edit/5
-        [Authorize(Roles = "canEdit")]
+        [Authorize(Roles = "canRead")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -133,7 +133,7 @@ namespace KulujenSeuranta.Controllers
         }
 
         // GET: Payment/Delete/5
-        [Authorize(Roles = "canEdit")]
+        [Authorize(Roles = "canRead")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

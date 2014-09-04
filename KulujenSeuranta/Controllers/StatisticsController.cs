@@ -18,7 +18,7 @@ namespace KulujenSeuranta.Controllers
     public class StatisticsController : Controller
     {
         // GET: Statistics
-        [Authorize(Roles = "canEdit")]
+        [Authorize(Roles = "canRead")]
         public ActionResult Index()
         {
             var statisticsViewModel = new StatisticsViewModel();
@@ -27,7 +27,7 @@ namespace KulujenSeuranta.Controllers
             return View("MonthlyView", statisticsViewModel);
         }
 
-        [Authorize(Roles = "canEdit")]
+        [Authorize(Roles = "canRead")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include = "SearchDate")] StatisticsViewModel statisticsViewModel)
