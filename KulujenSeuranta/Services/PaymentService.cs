@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity;
+using System.Data.Entity;
 
 using KulujenSeuranta.Models;
-using KulujenSeuranta.ViewModels;
+using KulujenSeuranta.Interfaces;
 
 namespace KulujenSeuranta.Services
 {
@@ -65,6 +66,45 @@ namespace KulujenSeuranta.Services
             }
 
             return paymentDictionary;
+        }
+
+        public Payment FindPayment(int? id)
+        {
+            return _db.Payments.Find(id);
+        }
+
+
+        public void AddPayment(Payment payment)
+        {
+            _db.Payments.Add(payment);
+            _db.SaveChanges();
+        }
+
+
+        public void ModifyPayment(Payment payment)
+        {
+            _db.Entry(payment).State = EntityState.Modified;
+            _db.SaveChanges();
+        }
+
+
+        public void RemovePayment(Payment payment)
+        {
+            _db.Payments.Remove(payment);
+            _db.SaveChanges();
+        }
+
+
+        public void DisposeDb()
+        {
+            _db.Dispose();       
+        }
+
+        public void AddCurrentUserToPayment(Payment payment, System.Security.Principal.IPrincipal user)
+        {
+            string currentUserId = user.Identity.GetUserId();
+            ApplicationUser currentUser = _db.Users.FirstOrDefault(x => x.Id == currentUserId);
+            payment.User = currentUser;
         }
     }
 }

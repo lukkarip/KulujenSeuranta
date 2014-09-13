@@ -6,22 +6,26 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using KulujenSeuranta.Models;
 using Microsoft.AspNet.Identity;
 
+using KulujenSeuranta.Models;
 using KulujenSeuranta.ViewModels;
+using KulujenSeuranta.Interfaces;
+using KulujenSeuranta.Services;
 
 namespace KulujenSeuranta.Controllers
 {
     public class PaymentController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
+        IPaymentService _paymentService = new PaymentService();
 
         // GET: Payment
         [Authorize(Roles = "canRead")]
         public ActionResult Index()
         {
-            var paymentsViewModel = new PaymentsViewModel();
+            var paymentsViewModel = new PaymentsViewModel(_paymentService);
             // Default search date is always current month & year
             paymentsViewModel.SearchDate = new SearchDate { UserInputDate = DateTime.Now.Month + "-" + DateTime.Now.Year };
             
@@ -50,7 +54,7 @@ namespace KulujenSeuranta.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Payment payment = db.Payments.Find(id);
+            Payment payment = _paymentService.FindPayment(id);
 
             if (payment == null)
             {
@@ -75,15 +79,13 @@ namespace KulujenSeuranta.Controllers
         [Authorize(Roles = "canEdit")]
         public ActionResult Create([Bind(Include = "PaymentId,Sum,Category,Date,User_Id")] Payment payment)
         {
-            AddCurrentUserToPayment(payment);
+            _paymentService.AddCurrentUserToPayment(payment, User);
             ModelState.Clear();
             TryValidateModel(payment);
 
             if (ModelState.IsValid)
             {
-                db.Payments.Add(payment);
-                db.SaveChanges();
-
+                _paymentService.AddPayment(payment);
                 return RedirectToAction("Index");
             }
 
@@ -99,7 +101,7 @@ namespace KulujenSeuranta.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Payment payments = db.Payments.Find(id);
+            Payment payments = _paymentService.FindPayment(id);
 
             if (payments == null)
             {
@@ -115,17 +117,21 @@ namespace KulujenSeuranta.Controllers
         [Authorize(Roles = "canEdit")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PaymentId,Sum,Category,Date,Created,CreatedUser,Modified,ModifiedUser")] Payment payment)
-        {
-            AddCurrentUserToPayment(payment);
+        public ActionResult Edit([Bind(Include = "PaymentId,Sum,Category,Date,User,Created,CreatedUser,Modified,ModifiedUser")] Payment payment)
+       {
+           string currentUserId = User.Identity.GetUserId();
+           ApplicationUser currentUser = _db.Users.FirstOrDefault(x => x.Id == currentUserId);
+           payment.User = currentUser;
+           //_paymentService.AddCurrentUserToPayment(payment, User);
+
             ModelState.Clear();
             TryValidateModel(payment);
 
             if (ModelState.IsValid)
             {
-                db.Entry(payment).State = EntityState.Modified;
-                db.SaveChanges();
-
+                _db.Entry(payment).State = EntityState.Modified;
+                _db.SaveChanges();
+                //_paymentService.ModifyPayment(payment);
                 return RedirectToAction("Index");
             }
 
@@ -141,7 +147,7 @@ namespace KulujenSeuranta.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Payment payments = db.Payments.Find(id);
+            Payment payments = _paymentService.FindPayment(id);
 
             if (payments == null)
             {
@@ -157,9 +163,8 @@ namespace KulujenSeuranta.Controllers
         [Authorize(Roles = "canEdit")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Payment payments = db.Payments.Find(id);
-            db.Payments.Remove(payments);
-            db.SaveChanges();
+            Payment payment = _paymentService.FindPayment(id);
+            _paymentService.RemovePayment(payment);
 
             return RedirectToAction("Index");
         }
@@ -168,17 +173,11 @@ namespace KulujenSeuranta.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _paymentService.DisposeDb();
             }
 
             base.Dispose(disposing);
         }
 
-        private void AddCurrentUserToPayment(Payment payment)
-        {
-            string currentUserId = User.Identity.GetUserId();
-            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
-            payment.User = currentUser;
-        }
     }
 }

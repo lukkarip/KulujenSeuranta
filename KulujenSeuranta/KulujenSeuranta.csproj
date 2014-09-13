@@ -263,13 +263,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StatisticsTexts.resx</DependentUpon>
     </Compile>
-    <Compile Include="Services\IPaymentService.cs" />
+    <Compile Include="Interfaces\IPaymentService.cs" />
     <Compile Include="Services\PaymentService.cs" />
     <Compile Include="Settings\ConfigurationHandler.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="ViewModels\PaymentsViewModel.cs" />
-    <Compile Include="ViewModels\SearchDate.cs" />
+    <Compile Include="Models\SearchDate.cs" />
     <Compile Include="ViewModels\StatisticsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

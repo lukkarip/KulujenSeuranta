@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace KulujenSeuranta.ViewModels
+namespace KulujenSeuranta.Models
 {
     public class SearchDate
     {

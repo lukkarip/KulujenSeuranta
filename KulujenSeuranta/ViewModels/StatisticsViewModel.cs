@@ -14,7 +14,7 @@ using DotNet.Highcharts.Helpers;
 
 using KulujenSeuranta.Models;
 using KulujenSeuranta.Helpers;
-using KulujenSeuranta.Services;
+using KulujenSeuranta.Interfaces;
 using Resources.Models;
 
 namespace KulujenSeuranta.ViewModels
@@ -23,9 +23,9 @@ namespace KulujenSeuranta.ViewModels
     {
         private IPaymentService _paymentService;
 
-        public StatisticsViewModel()
+        public StatisticsViewModel(IPaymentService paymentService)
         {
-            _paymentService = new PaymentService();
+            _paymentService = paymentService;
             SearchDate = new SearchDate();
         }
 
