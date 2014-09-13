@@ -11,18 +11,6 @@ using System.Web;
 
 namespace KulujenSeuranta.Models
 {
-    // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : IdentityUser
-    {
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
-        {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
-            return userIdentity;
-        }
-    }
-
     /// <summary>
     /// http://benjii.me/2014/03/track-created-and-modified-fields-automatically-with-entity-framework-code-first/
     /// </summary>
@@ -52,7 +40,7 @@ namespace KulujenSeuranta.Models
                 string exceptionMessage = HandleDbEntityValidationException(exception);
                 throw new DbEntityValidationException(exceptionMessage, exception.EntityValidationErrors);
             }
-            
+
         }
 
         private void UpdateCreatedAndModifiedData()
@@ -83,7 +71,7 @@ namespace KulujenSeuranta.Models
         /// <summary>
         /// Throw a new DbEntityValidationException with the improved exception message.
         /// </summary>
-        private string HandleDbEntityValidationException(DbEntityValidationException exception) 
+        private string HandleDbEntityValidationException(DbEntityValidationException exception)
         {
             // Retrieve the error messages as a list of strings.
             IEnumerable<string> errorMessages = exception.EntityValidationErrors

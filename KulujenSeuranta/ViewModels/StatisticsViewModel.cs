@@ -14,23 +14,32 @@ using DotNet.Highcharts.Helpers;
 
 using KulujenSeuranta.Models;
 using KulujenSeuranta.Helpers;
+using KulujenSeuranta.Services;
 using Resources.Models;
 
 namespace KulujenSeuranta.ViewModels
 {
     public class StatisticsViewModel
     {
-        private ApplicationDbContext _db;
-        private IEnumerable<Payment> _AllPayments;
+        private IPaymentService _paymentService;
+
+        public StatisticsViewModel()
+        {
+            _paymentService = new PaymentService();
+            SearchDate = new SearchDate();
+        }
+
+        [Required]
+        public SearchDate SearchDate { get; set; }
 
         public Dictionary<Categories, decimal> PaymentsByTypeInSelectedMonth 
         {
-            get { return GetPaymentsByType(); }
+            get { return _paymentService.GetPaymentsByType(SearchDate); }
         }
 
         public decimal SumOfAllPaymentsInSelectedMonth 
         {
-            get { return CalculateSumOfAllPaymentsInMonth(); }
+            get { return _paymentService.GetAllSearchDatePayments(SearchDate).Sum(payment => payment.Sum); }
         }
 
         public Highcharts ChartInSelectedMonth 
@@ -38,74 +47,12 @@ namespace KulujenSeuranta.ViewModels
             get { return CreateChart(); }
         }
 
-        [Required]
-        public SearchDate SearchDate { get; set; }
-
-        public StatisticsViewModel()
-        {
-            _db = new ApplicationDbContext();
-            GetAllPayments();
-            SearchDate = new SearchDate();
-        }
-
-        private void GetAllPayments()
-        {
-            _AllPayments = _db.Payments.ToList().Where(p => p.User.Id == HttpContext.Current.User.Identity.GetUserId());
-        }
-
-        private Dictionary<Categories, decimal> GetPaymentsByType() 
-        {
-            Dictionary<Categories, decimal> paymentsByTypeInSelectedMonth = new Dictionary<Categories, decimal>();
-            List<Payment> payments = GetAllSearchDatePayments();
-            paymentsByTypeInSelectedMonth = CreatePaymentsByTypeDictionary();
-
-            foreach (Payment payment in payments)
-            {
-                paymentsByTypeInSelectedMonth[payment.Category] += payment.Sum;
-            }
-
-            return paymentsByTypeInSelectedMonth;
-        }
-
-        private decimal CalculateSumOfAllPaymentsInMonth()
-        {
-            return GetAllSearchDatePayments().Sum(payment => payment.Sum);
-        }
-
-        private List<Payment> GetAllSearchDatePayments()
-        {
-            var searchDatePayments = new List<Payment>();
-
-            foreach (Payment payment in _AllPayments)
-            {
-                if (payment.Date.Year == SearchDate.Year &&
-                    payment.Date.Month == SearchDate.Month)
-                {
-                    searchDatePayments.Add(payment);
-                }
-            }
-
-            return searchDatePayments;
-        }
-
-        private Dictionary<Categories, decimal> CreatePaymentsByTypeDictionary()
-        {
-            var paymentDictionary = new Dictionary<Categories, decimal>();
-
-            foreach (Categories category in (Categories[])Enum.GetValues(typeof(Categories)))
-            {
-                paymentDictionary.Add(category, 0);
-            }
-
-            return paymentDictionary;
-        }
-
         private Highcharts CreateChart() 
         {
             List<string> xAxisValuesList = new List<string>();
             List<decimal> yAxisValues = new List<decimal>();
 
-            Dictionary<Categories, decimal> paymentsByType = GetPaymentsByType();
+            Dictionary<Categories, decimal> paymentsByType = _paymentService.GetPaymentsByType(SearchDate);
 
             foreach (Categories category in (Categories[])Enum.GetValues(typeof(Categories)))
             {

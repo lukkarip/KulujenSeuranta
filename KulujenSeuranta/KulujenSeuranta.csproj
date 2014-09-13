@@ -209,7 +209,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BaseEntity.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PaymentModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -263,8 +263,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StatisticsTexts.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\IPaymentService.cs" />
+    <Compile Include="Services\PaymentService.cs" />
     <Compile Include="Settings\ConfigurationHandler.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="ViewModels\PaymentsViewModel.cs" />
     <Compile Include="ViewModels\SearchDate.cs" />
     <Compile Include="ViewModels\StatisticsViewModel.cs" />

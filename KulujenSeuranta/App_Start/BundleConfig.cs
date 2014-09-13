@@ -12,15 +12,11 @@ namespace KulujenSeuranta
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/jqueryvalUnobtrusive").Include(
-                        "~/Scripts/jquery.validate.unobtrusive.js"));
+                        "~/Scripts/jquery.validate.js",
+                        "~/bundles/jqueryvalUnobtrusive"));
 
             bundles.Add(new ScriptBundle("~/bundles/globalize").Include(
-                        "~/Scripts/globalize/globalize.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/cultureFi").Include(
+                        "~/Scripts/globalize/globalize.js",
                         "~/Scripts/globalize/cultures/globalize.culture.fi-FI.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryvalGlobalize").Include(

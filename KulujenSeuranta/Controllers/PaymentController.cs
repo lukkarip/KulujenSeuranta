@@ -24,7 +24,7 @@ namespace KulujenSeuranta.Controllers
             var paymentsViewModel = new PaymentsViewModel();
             // Default search date is always current month & year
             paymentsViewModel.SearchDate = new SearchDate { UserInputDate = DateTime.Now.Month + "-" + DateTime.Now.Year };
-
+            
             return View(paymentsViewModel);
         }
 

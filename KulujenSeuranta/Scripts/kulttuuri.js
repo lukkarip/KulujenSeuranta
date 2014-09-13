@@ -8,6 +8,8 @@ $(document).ready(function () {
 
     $('.datepicker').datepicker({
         format: "dd.mm.yyyy",
+        viewMode: "weeks",
+        minViewMode: "weeks",
         language: "fi",
         calendarWeeks: true,
         autoclose: true,
