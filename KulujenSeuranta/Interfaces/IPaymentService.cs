@@ -14,7 +14,7 @@ namespace KulujenSeuranta.Interfaces
         void ModifyPayment(Payment payment);
         void RemovePayment(Payment payment);
         void DisposeDb();
-        void AddCurrentUserToPayment(Payment payment, System.Security.Principal.IPrincipal user);
+        void AddCurrentUserToPayment(ref Payment payment, System.Security.Principal.IPrincipal user);
         Dictionary<Categories, decimal> GetPaymentsByType(SearchDate searchDate);
         List<Payment> GetAllSearchDatePayments(SearchDate searchDate);
     }

@@ -18,7 +18,6 @@ namespace KulujenSeuranta.Controllers
     public class PaymentController : Controller
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
-
         IPaymentService _paymentService = new PaymentService();
 
         // GET: Payment
@@ -79,7 +78,7 @@ namespace KulujenSeuranta.Controllers
         [Authorize(Roles = "canEdit")]
         public ActionResult Create([Bind(Include = "PaymentId,Sum,Category,Date,User_Id")] Payment payment)
         {
-            _paymentService.AddCurrentUserToPayment(payment, User);
+            _paymentService.AddCurrentUserToPayment(ref payment, User);
             ModelState.Clear();
             TryValidateModel(payment);
 
@@ -122,7 +121,7 @@ namespace KulujenSeuranta.Controllers
            string currentUserId = User.Identity.GetUserId();
            ApplicationUser currentUser = _db.Users.FirstOrDefault(x => x.Id == currentUserId);
            payment.User = currentUser;
-           //_paymentService.AddCurrentUserToPayment(payment, User);
+           //_paymentService.AddCurrentUserToPayment(ref payment, User);
 
             ModelState.Clear();
             TryValidateModel(payment);

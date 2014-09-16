@@ -100,7 +100,7 @@ namespace KulujenSeuranta.Services
             _db.Dispose();       
         }
 
-        public void AddCurrentUserToPayment(Payment payment, System.Security.Principal.IPrincipal user)
+        public void AddCurrentUserToPayment(ref Payment payment, System.Security.Principal.IPrincipal user)
         {
             string currentUserId = user.Identity.GetUserId();
             ApplicationUser currentUser = _db.Users.FirstOrDefault(x => x.Id == currentUserId);
