@@ -268,8 +268,8 @@
     <Compile Include="Settings\ConfigurationHandler.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
-    <Compile Include="ViewModels\PaymentsViewModel.cs" />
     <Compile Include="Models\SearchDate.cs" />
+    <Compile Include="ViewModels\PaymentsViewModel.cs" />
     <Compile Include="ViewModels\StatisticsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
